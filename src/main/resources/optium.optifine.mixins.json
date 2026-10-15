@@ -1,0 +1,15 @@
+{
+	"parent": "optium.mixins.json",
+	"package": "me.modmuss50.optium.mixin",
+	"mixins": [
+		"MixinReflectorClass",
+		"MixinOptifineConfig",
+		"MixinDefaultResourcePack",
+		"CustomColoursMixin",
+		"ShadersMixin",
+		"VideoOptionsScreenMixin",
+		"Config",
+		"SMCLog",
+		"ParticleManagerMixin"
+	]
+}
