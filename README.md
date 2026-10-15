@@ -1,37 +1,42 @@
 # Optium
 
-Optium is an independent compatibility bridge for Minecraft Java Edition 1.17.1, targeting Fabric and constrained Android devices.
+![Optium](src/main/resources/assets/optium/icon.png)
 
-## Project goal
+**Optium is an independent Fabric-side compatibility bridge for running a separately obtained OptiFine JAR.** It is based on the MPL-2.0-licensed OptiFabric implementation and is being adapted and tested for Minecraft 1.17.1, with special attention to Fabric Loader 0.12.5 and Android/PojavLauncher.
 
-Provide an OptiFabric-style integration path for a separately supplied OptiFine JAR without requiring OptiFabric itself to be installed. OptiFine is not bundled with this project.
+> Development status: source port and build validation in progress. A successful compile does not by itself prove a successful launch on Android; device testing is still required.
 
-## Current status
+## Current engineering target
 
-**Early development. Not yet a working OptiFine loader.** The repository is being initialized before porting the correct OptiFabric 1.17.1 implementation. Do not treat this repository or any bootstrap prototype as a functional compatibility bridge until a build is tested in Minecraft.
+- Minecraft Java Edition **1.17.1**
+- Fabric Loader **0.12.5** as the historical compatibility baseline, with newer 0.16.x loaders as an additional target to test
+- Fabric API 1.17.x, including the 0.43.x compatibility fixes present in the chosen upstream source revision
+- OptiFine supplied separately by the user; Optium does not bundle OptiFine
+- Android/PojavLauncher constrained-memory launches
 
-## Compatibility target
+The upstream source uses Minecraft 1.16.5 as its compile/remapping baseline while choosing runtime mappings and compatibility mixins for later game versions. Do not change that baseline casually: it is part of the upstream multi-version build design, not a claim that the runtime target is 1.16.5.
 
-- Minecraft Java Edition 1.17.1
-- Fabric Loader, with versions to be pinned to the selected 1.17.1 source revision
-- Java 17 runtime on Android/PojavLauncher as the primary test environment
-- OptiFine supplied separately by the user
-- ReplayMod and other Fabric mods tested individually; compatibility is not assumed
+## Compatibility notes
 
-## Development plan
+A historical 1.17.1 report described a world-loading freeze with Loader 0.12.5 and Fabric API 0.43.0. The upstream maintainer identified a fabric-lifecycle-events-v1 mixin conflict. Upstream then added fixes for Fabric API 0.43 and 0.43.1+. Optium carries the later upstream source as its starting point; whether that fully resolves your exact mod list must be confirmed by a launch log.
 
-1. Port the upstream OptiFabric implementation from a verified 1.17.1-compatible revision, preserving its license and attribution.
-2. Rename the mod identity to Optium and remove any runtime or metadata dependency on OptiFabric.
-3. Keep OptiFine as a separate user-provided JAR; implement clear discovery, validation, and diagnostics.
-4. Establish a reproducible build and CI workflow.
-5. Test startup and crash cases on Minecraft 1.17.1 before making compatibility claims.
-6. Add a compact settings/diagnostics UI only after the loader path works.
-7. Profile performance on low-memory Android devices before making optimization changes.
+- [Upstream Loader 0.12 support](https://github.com/Chocohead/OptiFabric/commit/fc09c5188fd7b8968976df07e7286dcb0ab0c97e)
+- [Upstream Fabric API 0.43 fix](https://github.com/Chocohead/OptiFabric/commit/48e35b149d9ed23e3f846344ab35a2623ad5b031)
+- [Upstream Fabric API 0.43.1+ fix](https://github.com/Chocohead/OptiFabric/commit/9d6024e676a67518a8ed7f839360702017daaa57)
+- [Upstream OptiFabric 1.13.16 source snapshot](https://github.com/Chocohead/OptiFabric/tree/5ed616735878b2a1da50d5df1e96888c34817bed)
 
-## Licensing
+## Build and verification
 
-Optium's ported portions must retain the applicable upstream license and copyright notices. OptiFine is a separate project and is not included here. Check each dependency's license before redistributing it.
+The GitHub Actions workflow checks JSON/resource consistency and builds the mod with Java 17. Each successful workflow uploads the built JAR as an artifact. Download the artifact from the workflow run; use the ordinary optium JAR, not a sources JAR, in the Minecraft 1.17.1 profile.
 
-## Contributing
+On a phone, test using a backup profile first. Keep Optium, OptiFine, and Fabric API versions aligned with Minecraft 1.17.1. Do not load Optium and OptiFabric together. OptiFine is not compatible with Sodium, so keep this in a separate profile from the Sodium/Iris setup.
 
-Please include the Minecraft version, Fabric Loader version, OptiFine build, mod list, device/renderer details, and latest log or crash report with compatibility reports.
+For diagnostic class extraction, use the JVM argument -Doptium.extract=true. For any crash, attach the first relevant exception and the end of latest.log, not only a screenshot of the launcher.
+
+## Performance approach
+
+OptiFine's mapped class cache is retained to avoid repeating expensive extraction/remapping work on every launch. The fork avoids adding background threads or aggressive memory settings, which could make stability worse on low-memory Android devices. No FPS gain is promised: this project bridges OptiFine into Fabric; rendering performance depends on the device, OptiFine build, renderer, resource packs, and settings.
+
+## Attribution and licensing
+
+Optium modifies source from [Chocohead/OptiFabric](https://github.com/Chocohead/OptiFabric), originally by Modmuss50 and Chocohead. The inherited source remains under the Mozilla Public License 2.0; see [LICENSE](LICENSE). Required attribution and license notices are retained. OptiFine is a separate product and is not included here.
