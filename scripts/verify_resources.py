@@ -33,21 +33,35 @@ for config in manifest.get("mixins", []):
     if not (RES / config).is_file():
         fail(f"manifest mixin config does not exist: {config}")
 
-def java_exists(qualified_name):
-    relative = Path(*qualified_name.split(".")).with_suffix(".java")
-    return any((base / relative).is_file() for base in JAVA_ROOTS)
+sources = []
+for base in JAVA_ROOTS:
+    if base.exists():
+        sources.extend(base.rglob("*.java"))
+
+# Java top-level declarations, not filenames, are authoritative. Upstream has
+# compatibility mixins where a package-private class intentionally lives in a
+# differently named source file.
+defined_types = set()
+for source in sources:
+    text = source.read_text(encoding="utf-8", errors="replace")
+    package_match = re.search(r'^\s*package\s+([\w.]+)\s*;', text, re.M)
+    package = package_match.group(1) if package_match else ""
+    for match in re.finditer(
+        r'\b(?:public\s+|protected\s+|private\s+|abstract\s+|final\s+|static\s+|sealed\s+|non-sealed\s+)*(?:class|interface|enum|record)\s+(\w+)',
+        text,
+    ):
+        defined_types.add((package + "." if package else "") + match.group(1))
+
+def type_exists(qualified_name):
+    return qualified_name in defined_types
 
 for key, entries in manifest.get("entrypoints", {}).items():
     if not isinstance(entries, list):
         entries = [entries]
     for entry in entries:
-        if isinstance(entry, str) and "." in entry and not java_exists(entry):
-            fail(f"entrypoint {key} class is missing: {entry}")
+        if isinstance(entry, str) and "." in entry and not type_exists(entry):
+            fail(f"entrypoint {key} class declaration is missing: {entry}")
 
-sources = []
-for base in JAVA_ROOTS:
-    if base.exists():
-        sources.extend(base.rglob("*.java"))
 for source in sources:
     text = source.read_text(encoding="utf-8", errors="replace")
     for config in re.findall(r'"((?:optium)[^"]*mixins?\.json)"', text):
@@ -72,12 +86,9 @@ for path in sorted(RES.rglob("*.json")):
     if isinstance(plugin, str):
         names.append(plugin)
     for name in names:
-        if name.startswith("."):
-            fail(f"relative mixin class name in {path.relative_to(ROOT)}: {name}")
-            continue
-        qualified = name if "." in name else (package + "." + name if package else name)
-        if not java_exists(qualified):
-            fail(f"mixin/plugin class missing: {qualified} (from {path.relative_to(ROOT)})")
+        qualified = name if name.startswith("me.") else (package + "." + name if package else name)
+        if not type_exists(qualified):
+            fail(f"mixin/plugin class declaration missing: {qualified} (from {path.relative_to(ROOT)})")
 
 for base in JAVA_ROOTS + [RES]:
     if base.exists():
@@ -96,4 +107,4 @@ if errors:
     for error in errors:
         print(" - " + error)
     sys.exit(1)
-print(f"Optium metadata/resource verification passed. Checked {len(sources)} Java sources.")
+print(f"Optium metadata/resource verification passed. Checked {len(sources)} Java sources and {len(defined_types)} declared types.")
