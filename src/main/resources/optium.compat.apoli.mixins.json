@@ -1,0 +1,9 @@
+{
+	"parent": "optium.mixins.json",
+	"package": "me.modmuss50.optium.compat.apoli.mixin",
+	"plugin": "me.modmuss50.optium.compat.apoli.ApoliMixinPlugin",
+	"mixins": [
+		"BackgroundRendererMixin",
+		"ElytraFeatureRendererMixin"
+	]
+}

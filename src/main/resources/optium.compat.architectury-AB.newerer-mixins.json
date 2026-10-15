@@ -1,0 +1,9 @@
+{
+    "parent": "optium.mixins.json",
+    "package": "me.modmuss50.optium.compat.architectury.mixin",
+    "plugin": "me.modmuss50.optium.compat.InterceptingMixinPlugin",
+    "mixins": [
+        "GameRendererNewererMixin",
+        "SpriteAtlasTextureNewMixin"
+    ]
+}
