@@ -59,7 +59,7 @@ public class OptifineSetup {
 	@SuppressWarnings("unchecked")
 	public static Pair<File, ClassCache> getRuntime() throws IOException {
 		@SuppressWarnings("deprecation") //Keeping backward compatibility with older Loader versions
-		File workingDir = new File(FabricLoader.getInstance().getGameDirectory(), ".optifine");
+		File workingDir = new File(FabricLoader.getInstance().getGameDirectory(), ".optium");
 		if (!workingDir.exists()) {
 			FileUtils.forceMkdir(workingDir);
 		}
