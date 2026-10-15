@@ -1,0 +1,8 @@
+{
+	"parent": "optium.mixins.json",
+	"package": "me.modmuss50.optium.compat.fabricrenderingdata.mixin",
+	"mixins": [
+		"BridgedChunkRendererRegionMixin",
+		"ChunkCacheOFMixin"
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"parent": "optium.mixins.json",
+	"package": "me.modmuss50.optium.compat.fabricrendererapi.mixin",
+	"plugin": "me.modmuss50.optium.compat.fabricrendererapi.RendererMixinPlugin",
+	"mixins": [
+		"BlockModelRendererMixin",
+		"BlockRenderManagerMixin",
+		"ConnectedTexturesMixin"
+	]
+}
