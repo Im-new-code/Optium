@@ -186,14 +186,21 @@ public class OptiumSetup implements Runnable {
 			}
 		}
 
+		// The performance distribution includes a marker resource and declares
+		// fabric-renderer-api-v1:contains_renderer=true. In that variant Indigo
+		// yields terrain rendering to OptiFine, so never register shims that
+		// expect Indigo's renderer mixins to be active.
+		boolean performanceRendererMode = OptiumSetup.class.getResource("/optium-performance-mode.marker") != null;
 		if (isPresent("fabric-renderer-indigo")) {
-			if (isPresent("minecraft", ">=1.19")) {
+			if (performanceRendererMode) {
+				System.out.println("[Optium] Performance renderer profile enabled. OptiFine owns terrain rendering; Indigo custom-model rendering compatibility is disabled.");
+			} else if (isPresent("minecraft", ">=1.19")) {
 				injector.predictFuture(RemappingUtils.getClassName("class_776")).ifPresent(node -> {//BlockRenderManager
 					String desc = RemappingUtils.getClassName("class_1921").concat(";)V"); //RenderLayer
 
 					for (MethodNode method : node.methods) {
 						if ("renderBatched".equals(method.name) && method.desc.endsWith(desc)) {
-							Mixins.addConfiguration("optium.compat.indigo.newer-mixins.json");							
+							Mixins.addConfiguration("optium.compat.indigo.newer-mixins.json");
 							return;
 						}
 					}
