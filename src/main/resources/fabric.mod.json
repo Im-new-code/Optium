@@ -19,8 +19,7 @@
       "me.modmuss50.optium.mod.TextSetup",
       "me.modmuss50.optium.mod.OptiumSetup"
     ],
-    "preLaunch": ["me.modmuss50.optium.mod.OptiumLoadGuard"],
-    "client": ["me.modmuss50.optium.mod.OptiumClient"]
+    "preLaunch": ["me.modmuss50.optium.mod.OptiumLoadGuard"]
   },
   "custom": {
     "fabric-renderer-indigo:force_compatibility": true
