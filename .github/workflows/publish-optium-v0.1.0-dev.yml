@@ -1,0 +1,65 @@
+name: Publish Optium v0.1.0-dev
+
+on:
+  push:
+    branches:
+      - release/v0.1.0-dev
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build, verify, and publish the tested bridge
+    if: github.ref == 'refs/heads/release/v0.1.0-dev'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out release source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Verify metadata and mixin resources
+        run: python3 scripts/verify_resources.py
+
+      - name: Build mod JAR
+        run: ./gradlew --no-daemon --stacktrace build
+
+      - name: Verify and stage distributable JAR
+        run: python3 scripts/verify_jar.py
+
+      - name: Publish GitHub pre-release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.1.0-dev
+          target_commitish: ${{ github.sha }}
+          name: Optium v0.1.0-dev (ReplayMod-compatible)
+          body: |
+            ## Optium v0.1.0-dev
+
+            Experimental release of the tested Optium Fabric bridge with the ReplayMod jGui keyboard-conflict workaround.
+
+            ### Tested target profile
+            - Minecraft Java Edition 1.17.1
+            - Fabric Loader 0.16.14
+            - Java 17 on PojavLauncher / Android
+            - OptiFine HD U H2 pre1, supplied separately
+            - ReplayMod 1.17.1-2.6.20
+
+            The ReplayMod workaround disables only its conflicting bundled jGui MixinKeyboardListener. ReplayMod remains installed, and recording plus video rendering with shaders has been verified on the target device.
+
+            ### Install
+            Download Optium-0.1.0-dev.jar below and place it in the target profile's mods folder with Fabric API and a separately obtained compatible OptiFine JAR.
+
+            Do not install OptiFabric beside Optium. Keep Sodium/Iris in a separate renderer profile. This is an experimental release; make a backup of the profile/world before testing.
+          prerelease: true
+          files: build/distributions/Optium-*.jar
+          fail_on_unmatched_files: true
