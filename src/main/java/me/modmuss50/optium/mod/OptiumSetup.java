@@ -37,10 +37,27 @@ import com.chocohead.mm.api.ClassTinkerers;
 public class OptiumSetup implements Runnable {
 	public static File optifineRuntimeJar = null;
 	public static boolean usingScreenAPI;
+	/** True when Sodium/Iris owns rendering and the OptiFine bridge is intentionally bypassed. */
+	public static volatile boolean disabledForExternalRenderer;
 
 	//This is called early on to allow us to get the transformers in beofore minecraft starts
 	@Override
 	public void run() {
+		// Sodium replaces Minecraft's renderer, and Iris is built on that renderer.
+		// OptiFine's class-replacement pipeline cannot safely run beside either one.
+		// Detect them before touching the OptiFine JAR or registering OptiFine mixins.
+		FabricLoader loader = FabricLoader.getInstance();
+		boolean sodiumPresent = loader.isModLoaded("sodium");
+		boolean irisPresent = loader.isModLoaded("iris");
+		if (sodiumPresent || irisPresent) {
+			disabledForExternalRenderer = true;
+			String backend = sodiumPresent && irisPresent ? "Sodium + Iris" : (sodiumPresent ? "Sodium" : "Iris");
+			System.out.println("[Optium] Detected " + backend + ". Skipping OptiFine loading, class replacement, and OptiFine-specific mixins so the external renderer can own rendering.");
+			System.out.println("[Optium] OptiFine visual features and OptiFine shaderpacks are disabled in this mode. Remove Sodium/Iris to use OptiFine through Optium.");
+			return;
+		}
+
+		System.out.println("[Optium] No Sodium/Iris renderer detected; enabling the OptiFine bridge.");
 		OptifineInjector injector;
 		try {
 			Pair<File, ClassCache> runtime = OptifineSetup.getRuntime();
