@@ -26,6 +26,22 @@ if manifest.get("name") != "Optium":
     fail("fabric.mod.json name must be 'Optium'")
 if manifest.get("license") != "MPL-2.0":
     fail("MPL-2.0 license declaration is missing")
+if "sodium" in manifest.get("conflicts", {}):
+    fail("Sodium must be allowed to resolve so the early-riser renderer bypass can run")
+
+setup_path = ROOT / "src/main/java/me/modmuss50/optium/mod/OptiumSetup.java"
+title_mixin_path = ROOT / "src/main/java/me/modmuss50/optium/mixin/MixinTitleScreen.java"
+try:
+    setup_source = setup_path.read_text(encoding="utf-8")
+    title_source = title_mixin_path.read_text(encoding="utf-8")
+    for required in ('loader.isModLoaded("sodium")', 'loader.isModLoaded("iris")',
+                     "disabledForExternalRenderer = true", "Skipping OptiFine loading"):
+        if required not in setup_source:
+            fail(f"external-renderer bypass is missing expected guard: {required}")
+    if "OptiumSetup.disabledForExternalRenderer" not in title_source:
+        fail("title-screen OptiFine UI must be guarded when an external renderer owns rendering")
+except OSError as exc:
+    fail(f"could not check external-renderer guard sources: {exc}")
 icon = RES / manifest.get("icon", "")
 if not icon.is_file():
     fail(f"icon does not exist: {manifest.get('icon')}")
