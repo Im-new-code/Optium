@@ -41,6 +41,7 @@ public abstract class MixinTitleScreen extends Screen {
 	@SuppressWarnings("deprecation")
 	@Inject(method = "init", at = @At("RETURN"))
 	private void init(CallbackInfo info) {
+		if (OptiumSetup.disabledForExternalRenderer) return;
 		if (OptiumError.hasError()) {
 			if (OptiumSetup.usingScreenAPI) Events.afterInit(client, this, width, height);
 
@@ -92,7 +93,7 @@ public abstract class MixinTitleScreen extends Screen {
 
 	@Inject(method = "render", at = @At("RETURN"))
 	private void render(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo info) {
-		if (!OptiumError.hasError()) {
+		if (!OptiumError.hasError() && !OptiumSetup.disabledForExternalRenderer) {
 			float fadeTime = doBackgroundFade ? (Util.getMeasuringTimeMs() - backgroundFadeStart) / 1000F : 1F;
 			float fadeColor = doBackgroundFade ? MathHelper.clamp(fadeTime - 1F, 0F, 1F) : 1F;
 
