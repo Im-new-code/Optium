@@ -162,14 +162,14 @@ public final class OptiumStatusScreen extends Screen {
     }
 
     @Override
-    public void close() {
+    public void onClose() {
         if (this.client != null) {
             this.client.openScreen(this.parent);
         }
     }
 
     @Override
-    public boolean shouldPause() {
+    public boolean isPauseScreen() {
         return false;
     }
 }
