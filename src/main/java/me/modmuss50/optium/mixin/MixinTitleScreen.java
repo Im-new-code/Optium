@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
+import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Util;
@@ -21,6 +22,7 @@ import net.minecraft.util.math.MathHelper;
 
 import net.fabricmc.loader.api.FabricLoader;
 
+import me.modmuss50.optium.gui.OptiumStatusScreen;
 import me.modmuss50.optium.compat.fabricscreenapi.Events;
 import me.modmuss50.optium.mod.OptiumError;
 import me.modmuss50.optium.mod.OptiumSetup;
@@ -41,6 +43,9 @@ public abstract class MixinTitleScreen extends Screen {
 	@SuppressWarnings("deprecation")
 	@Inject(method = "init", at = @At("RETURN"))
 	private void init(CallbackInfo info) {
+		this.addButton(new ButtonWidget(8, height - 48, 120, 20, Text.literal("Optium Status"), button -> {
+			if (client != null) client.openScreen(new OptiumStatusScreen(this));
+		}));
 		if (OptiumSetup.disabledForExternalRenderer) return;
 		if (OptiumError.hasError()) {
 			if (OptiumSetup.usingScreenAPI) Events.afterInit(client, this, width, height);
