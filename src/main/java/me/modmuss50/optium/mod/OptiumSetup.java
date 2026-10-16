@@ -501,13 +501,13 @@ public class OptiumSetup implements Runnable {
 
 		if (isPresent("replaymod")) {
 			if (isPresent("minecraft", ">=1.17")) {
-				// Work around the OptiFine/ReplayMod keyboard mixin conflict:
-				// ReplayMod's MixinKeyboardListener can fail against OptiFine's
-				// charTypedOptifine method due to a static-modifier mismatch.
-				// Each 1.17+ compatibility config only registers the keyboard
-				// adapter, so skipping the config avoids that adapter without
-				// disabling ReplayMod itself or weakening Mixin injection checks.
-				System.out.println("[Optium] Skipping the ReplayMod keyboard compatibility adapter on Minecraft 1.17+ to avoid the OptiFine charTypedOptifine static-modifier conflict. ReplayMod itself remains enabled.");
+				// OptiFine adds/changes charTypedOptifine in a way that breaks
+				// ReplayMod's bundled jGui MixinKeyboardListener. The upstream
+				// workaround removes that one jGui mixin and its OptiFabric
+				// keyboard adapter. Apply the same narrow workaround in memory,
+				// without editing the user's ReplayMod JAR.
+				System.out.println("[Optium] Applying the ReplayMod jGui keyboard mixin workaround for Minecraft 1.17+.");
+				disableReplayModJGuiKeyboardMixin();
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
@@ -533,6 +533,56 @@ public class OptiumSetup implements Runnable {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Removes only ReplayMod's known-broken bundled jGui keyboard mixin from
+	 * the registered Mixin config before Mixin prepares it. This mirrors the
+	 * field-tested workaround for OptiFine's charTypedOptifine incompatibility
+	 * without modifying the ReplayMod JAR on disk.
+	 */
+	private static void disableReplayModJGuiKeyboardMixin() {
+		for (Config config : Mixins.getConfigs()) {
+			if (!"mixins.jgui.json".equals(config.getName())) {
+				continue;
+			}
+
+			IMixinConfig settings = config.getConfig();
+			String mixinPackage = settings.getMixinPackage();
+			if (mixinPackage == null || !mixinPackage.contains("johni0702.minecraft.gui.versions.mixin")) {
+				System.err.println("[Optium] Found mixins.jgui.json, but its package did not match the expected ReplayMod jGui package. Leaving it unchanged: " + mixinPackage);
+				return;
+			}
+
+			boolean removed = false;
+			for (String fieldName : new String[] {"mixinClasses", "mixinClassesClient", "mixinClassesServer"}) {
+				try {
+					java.lang.reflect.Field field = settings.getClass().getDeclaredField(fieldName);
+					field.setAccessible(true);
+					Object value = field.get(settings);
+					if (value instanceof java.util.List<?>) {
+						@SuppressWarnings("unchecked")
+						java.util.List<String> mixinClasses = (java.util.List<String>) value;
+						removed |= mixinClasses.remove("MixinKeyboardListener");
+					}
+				} catch (NoSuchFieldException ignored) {
+					// Mixin versions differ. A missing list is safe to skip.
+				} catch (ReflectiveOperationException | RuntimeException e) {
+					System.err.println("[Optium] Could not adjust ReplayMod's jGui mixin list; the workaround may not apply.");
+					e.printStackTrace();
+					return;
+				}
+			}
+
+			if (removed) {
+				System.out.println("[Optium] Disabled ReplayMod's jGui MixinKeyboardListener (only) to bypass the OptiFine charTypedOptifine conflict.");
+			} else {
+				System.err.println("[Optium] ReplayMod's jGui keyboard mixin was not present in the expected config; no mixin entries were changed.");
+			}
+			return;
+		}
+
+		System.err.println("[Optium] ReplayMod is present but mixins.jgui.json was not registered yet; keyboard workaround could not be applied.");
 	}
 
 	private static boolean isPresent(String modID) {
