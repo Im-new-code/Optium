@@ -4,12 +4,12 @@
 
 **Optium is an independent Fabric-side compatibility bridge for running a separately obtained OptiFine JAR.** It is based on the MPL-2.0-licensed OptiFabric implementation and is being adapted and tested for Minecraft 1.17.1, with special attention to Fabric Loader 0.12.5 and Android/PojavLauncher.
 
-> Development status: source port and build validation in progress. A successful compile does not by itself prove a successful launch on Android; device testing is still required.
+> Development status: the OptiFine bridge has been boot-tested on Android with Minecraft 1.17.1 and Fabric Loader 0.16.14. Performance tuning and broader mod-combination testing remain in progress.
 
 ## Current engineering target
 
 - Minecraft Java Edition **1.17.1**
-- Fabric Loader **0.12.5** as the historical compatibility baseline, with newer 0.16.x loaders as an additional target to test
+- Fabric Loader **0.16.14** as the current Android target; the historical 0.12.x compatibility work is retained
 - Fabric API 1.17.x, including the 0.43.x compatibility fixes present in the chosen upstream source revision
 - OptiFine supplied separately by the user; Optium does not bundle OptiFine
 - Android/PojavLauncher constrained-memory launches
@@ -29,13 +29,15 @@ The original 1.17.1-era loader incompatibility was real: earlier OptiFabric rele
 
 The GitHub Actions workflow checks metadata/resource consistency, builds with Java 17, then validates the remapped JAR's ZIP integrity, embedded Fabric-ASM dependency, entrypoint classes, logo bytes, and Java 8 class-file compatibility. A successful run uploads one distributable named `Optium-<version>.jar` in the `optium-mod-jar` artifact, avoiding source and development JAR variants. Download it from the workflow run's **Artifacts** section. These checks confirm packaging and bytecode structure, not that Minecraft has launched successfully.
 
-On a phone, test using a backup profile first. Keep Optium, OptiFine, and Fabric API versions aligned with Minecraft 1.17.1. Do not load Optium and OptiFabric together. OptiFine is not compatible with Sodium, so keep this in a separate profile from the Sodium/Iris setup.
+On a phone, test using a backup profile first. Keep Optium, OptiFine, and Fabric API versions aligned with Minecraft 1.17.1. Do not load Optium and OptiFabric together. Optium detects Sodium/Iris in the early-riser phase and intentionally bypasses the OptiFine bridge, class replacements and OptiFine-only mixins so the external renderer can own rendering. In that mode, OptiFine features and shaderpacks are not active. Use separate profiles for OptiFine and Sodium/Iris.
 
 For diagnostic class extraction, use the JVM argument -Doptium.extract=true. For any crash, attach the first relevant exception and the end of latest.log, not only a screenshot of the launcher.
 
 ## Performance approach
 
-OptiFine's mapped class cache is retained to avoid repeating expensive extraction/remapping work on every launch. The fork avoids adding background threads or aggressive memory settings, which could make stability worse on low-memory Android devices. No FPS gain is promised: this project bridges OptiFine into Fabric; rendering performance depends on the device, OptiFine build, renderer, resource packs, and settings.
+OptiFine's mapped class cache is retained to avoid repeating expensive extraction/remapping work on every launch. The fork avoids adding background threads or aggressive memory settings, which could make stability worse on low-memory Android devices. The current log shows the warm cache is reused; it also shows lengthy new-world spawn generation/server tick delays and resource-pack/shader transitions. It does not contain measured FPS or frame-time samples, so it cannot prove why the reported average is around 30 FPS.
+
+Read [PERFORMANCE.md](docs/PERFORMANCE.md) for the log findings and a researched Minecraft 1.17.1 performance-mod matrix. Initial recommendations are FerriteCore, Lithium and LazyDFU as separate mods, tested one at a time. Renderer mods such as Entity Culling and Enhanced Block Entities need extra caution with OptiFine. No FPS gain is promised until a controlled same-scene comparison confirms it.
 
 ## Attribution and licensing
 
