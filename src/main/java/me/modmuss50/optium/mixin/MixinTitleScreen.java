@@ -21,7 +21,6 @@ import net.minecraft.util.math.MathHelper;
 
 import net.fabricmc.loader.api.FabricLoader;
 
-import me.modmuss50.optium.gui.OptiumStatusScreen;
 import me.modmuss50.optium.compat.fabricscreenapi.Events;
 import me.modmuss50.optium.mod.OptiumError;
 import me.modmuss50.optium.mod.OptiumSetup;
