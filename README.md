@@ -18,7 +18,7 @@ The upstream source uses Minecraft 1.16.5 as its compile/remapping baseline whil
 
 ## Compatibility notes
 
-A historical 1.17.1 report described a world-loading freeze with Loader 0.12.5 and Fabric API 0.43.0. The upstream maintainer identified a fabric-lifecycle-events-v1 mixin conflict. Upstream then added fixes for Fabric API 0.43 and 0.43.1+. Optium carries the later upstream source as its starting point; whether that fully resolves your exact mod list must be confirmed by a launch log.
+The original 1.17.1-era loader incompatibility was real: earlier OptiFabric releases declared `fabricloader <0.12`, and affected builds called `getGameProvider().getGameContextJars()`, which could fail with `NoSuchMethodError`. The upstream [Loader 0.12 support commit](https://github.com/Chocohead/OptiFabric/commit/fc09c5188fd7b8968976df07e7286dcb0ab0c97e) raised the supported baseline to Loader 0.12.5 and replaced that call with a newer object-share lookup plus a fallback path for older APIs. The source port used by Optium includes that compatibility logic. Separate upstream commits address Fabric API 0.43 and 0.43.1+ compatibility. CI confirms the source builds and the JAR passes packaging checks, but it cannot prove that every mod combination launches correctly on PojavLauncher.
 
 - [Upstream Loader 0.12 support](https://github.com/Chocohead/OptiFabric/commit/fc09c5188fd7b8968976df07e7286dcb0ab0c97e)
 - [Upstream Fabric API 0.43 fix](https://github.com/Chocohead/OptiFabric/commit/48e35b149d9ed23e3f846344ab35a2623ad5b031)
