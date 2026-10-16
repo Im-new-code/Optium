@@ -35,6 +35,10 @@ with zipfile.ZipFile(jar_path) as jar:
     name_set = set(names)
     if len(name_set) != len(names):
         errors.append("duplicate ZIP entry paths found")
+    if "me/modmuss50/optium/gui/OptiumStatusScreen.class" in name_set:
+        errors.append("removed status screen class must not be packaged")
+    if "me/modmuss50/optium/mod/OptiumClient.class" in name_set:
+        errors.append("removed status-screen client hook must not be packaged")
 
     try:
         manifest = json.loads(jar.read("fabric.mod.json").decode("utf-8"))
