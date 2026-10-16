@@ -39,6 +39,8 @@ public class OptiumSetup implements Runnable {
 	public static boolean usingScreenAPI;
 	/** True when Sodium/Iris owns rendering and the OptiFine bridge is intentionally bypassed. */
 	public static volatile boolean disabledForExternalRenderer;
+	/** True only when the ReplayMod jGui keyboard mixin was successfully removed. */
+	public static volatile boolean replayModKeyboardWorkaroundApplied;
 
 	//This is called early on to allow us to get the transformers in beofore minecraft starts
 	@Override
@@ -184,14 +186,21 @@ public class OptiumSetup implements Runnable {
 			}
 		}
 
+		// The performance distribution includes a marker resource and declares
+		// fabric-renderer-api-v1:contains_renderer=true. In that variant Indigo
+		// yields terrain rendering to OptiFine, so never register shims that
+		// expect Indigo's renderer mixins to be active.
+		boolean performanceRendererMode = OptiumSetup.class.getResource("/optium-performance-mode.marker") != null;
 		if (isPresent("fabric-renderer-indigo")) {
-			if (isPresent("minecraft", ">=1.19")) {
+			if (performanceRendererMode) {
+				System.out.println("[Optium] Performance renderer profile enabled. OptiFine owns terrain rendering; Indigo custom-model rendering compatibility is disabled.");
+			} else if (isPresent("minecraft", ">=1.19")) {
 				injector.predictFuture(RemappingUtils.getClassName("class_776")).ifPresent(node -> {//BlockRenderManager
 					String desc = RemappingUtils.getClassName("class_1921").concat(";)V"); //RenderLayer
 
 					for (MethodNode method : node.methods) {
 						if ("renderBatched".equals(method.name) && method.desc.endsWith(desc)) {
-							Mixins.addConfiguration("optium.compat.indigo.newer-mixins.json");							
+							Mixins.addConfiguration("optium.compat.indigo.newer-mixins.json");
 							return;
 						}
 					}
@@ -569,6 +578,7 @@ public class OptiumSetup implements Runnable {
 		}
 
 		if (removed) {
+			replayModKeyboardWorkaroundApplied = true;
 			System.out.println("[Optium] Disabled ReplayMod's jGui MixinKeyboardListener (only) to bypass the OptiFine charTypedOptifine conflict.");
 		} else {
 			System.err.println("[Optium] Found mixins.jgui.json in Mixin's full registry, but did not find its keyboard mixin entry; no mixin entries were changed.");

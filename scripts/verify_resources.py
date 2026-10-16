@@ -54,6 +54,23 @@ for base in JAVA_ROOTS:
     if base.exists():
         sources.extend(base.rglob("*.java"))
 
+# Optium intentionally has no custom status screen or per-tick keybinding hook.
+# Keep this removed: the previous title-screen UI implementation crashed on the
+# OptiFine runtime and adds no value to the renderer bridge.
+for source in sources:
+    if source.name in {"OptiumClient.java", "OptiumStatusScreen.java"}:
+        fail(f"removed status UI must not be shipped: {source.relative_to(ROOT)}")
+for base in JAVA_ROOTS + [RES]:
+    if base.exists():
+        for path in base.rglob("*"):
+            if path.is_file() and path.suffix in {".java", ".json"}:
+                try:
+                    text = path.read_text(encoding="utf-8", errors="replace")
+                except OSError:
+                    continue
+                if "key.optium.open_status" in text:
+                    fail(f"stale status-screen keybinding reference: {path.relative_to(ROOT)}")
+
 # Java top-level declarations, not filenames, are authoritative. Upstream has
 # compatibility mixins where a package-private class intentionally lives in a
 # differently named source file.
