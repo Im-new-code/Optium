@@ -39,6 +39,8 @@ public class OptiumSetup implements Runnable {
 	public static boolean usingScreenAPI;
 	/** True when Sodium/Iris owns rendering and the OptiFine bridge is intentionally bypassed. */
 	public static volatile boolean disabledForExternalRenderer;
+	/** True only when the ReplayMod jGui keyboard mixin was successfully removed. */
+	public static volatile boolean replayModKeyboardWorkaroundApplied;
 
 	//This is called early on to allow us to get the transformers in beofore minecraft starts
 	@Override
@@ -569,6 +571,7 @@ public class OptiumSetup implements Runnable {
 		}
 
 		if (removed) {
+			replayModKeyboardWorkaroundApplied = true;
 			System.out.println("[Optium] Disabled ReplayMod's jGui MixinKeyboardListener (only) to bypass the OptiFine charTypedOptifine conflict.");
 		} else {
 			System.err.println("[Optium] Found mixins.jgui.json in Mixin's full registry, but did not find its keyboard mixin entry; no mixin entries were changed.");
