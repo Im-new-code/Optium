@@ -3,7 +3,7 @@
   "id": "optium",
   "version": "${version}",
   "name": "Optium",
-  "description": "An independent Fabric compatibility bridge for a separately supplied OptiFine JAR",
+  "description": "Fabric bridge for a separately supplied OptiFine JAR; automatically bypasses OptiFine when Sodium/Iris owns rendering",
   "authors": ["Optium contributors", "Modmuss50", "Chocohead"],
   "contact": {
     "homepage": "https://github.com/Im-new-code/Optium",
@@ -33,9 +33,6 @@
       "1.19", "1.19.1", "1.19.2"
     ],
     "mm": ">=2.0"
-  },
-  "conflicts": {
-    "sodium": "*"
   },
   "breaks": {
     "no_fog": "*",
