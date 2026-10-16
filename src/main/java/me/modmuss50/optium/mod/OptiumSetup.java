@@ -501,13 +501,10 @@ public class OptiumSetup implements Runnable {
 
 		if (isPresent("replaymod")) {
 			if (isPresent("minecraft", ">=1.17")) {
-				// OptiFine adds/changes charTypedOptifine in a way that breaks
-				// ReplayMod's bundled jGui MixinKeyboardListener. The upstream
-				// workaround removes that one jGui mixin and its OptiFabric
-				// keyboard adapter. Apply the same narrow workaround in memory,
-				// without editing the user's ReplayMod JAR.
-				System.out.println("[Optium] Applying the ReplayMod jGui keyboard mixin workaround for Minecraft 1.17+.");
-				disableReplayModJGuiKeyboardMixin();
+				// ReplayMod registers mixins.jgui.json in its own Early Riser, which
+				// runs after this one. Apply the workaround from OptiumLoadGuard's
+				// preLaunch entrypoint, once all Early Risers have registered configs.
+				System.out.println("[Optium] Deferring the ReplayMod jGui keyboard workaround until pre-launch.");
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
@@ -541,7 +538,7 @@ public class OptiumSetup implements Runnable {
 	 * already prepared internal lists are also filtered, where present, so
 	 * early class transformations cannot make the workaround ineffective.
 	 */
-	private static void disableReplayModJGuiKeyboardMixin() {
+	static void disableReplayModJGuiKeyboardMixin() {
 		for (Config config : Mixins.getConfigs()) {
 			if (!"mixins.jgui.json".equals(config.getName())) {
 				continue;
