@@ -58,6 +58,8 @@ import me.modmuss50.optium.util.ZipUtils.ZipVisitor;
 public class OptifineSetup {
 	@SuppressWarnings("unchecked")
 	public static Pair<File, ClassCache> getRuntime() throws IOException {
+		final long setupStarted = System.nanoTime();
+		System.out.println("[Optium] OptiFine runtime preparation started");
 		@SuppressWarnings("deprecation") //Keeping backward compatibility with older Loader versions
 		File workingDir = new File(FabricLoader.getInstance().getGameDirectory(), ".optium");
 		if (!workingDir.exists()) {
@@ -84,6 +86,7 @@ public class OptifineSetup {
 			//Validate that the classCache found is for the same input jar
 			if (Arrays.equals(classCache.getHash(), modHash)) {
 				System.out.println("Found existing patched optifine jar, using that");
+				System.out.println("[Optium] Warm-cache validation took " + elapsedMillis(setupStarted) + " ms");
 
 				if (classCache.isConverted()) {
 					classCache.save(optifinePatches);
@@ -200,7 +203,13 @@ public class OptifineSetup {
 			ZipUtils.extract(completedJar, optifineClasses);
 		}
 
-		return Pair.of(remappedJar, generateClassCache(jarFinaliser, optifinePatches, modHash, extract));
+		Pair<File, ClassCache> result = Pair.of(remappedJar, generateClassCache(jarFinaliser, optifinePatches, modHash, extract));
+		System.out.println("[Optium] Cold-cache OptiFine preparation took " + elapsedMillis(setupStarted) + " ms");
+		return result;
+	}
+
+	private static long elapsedMillis(long startedNanos) {
+		return (System.nanoTime() - startedNanos) / 1_000_000L;
 	}
 
 	private static void runInstaller(File installer, File output, File minecraftJar) throws IOException {
