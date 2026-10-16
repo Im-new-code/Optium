@@ -1,0 +1,1401 @@
+Failed To Load Current Mod Checker Config
+==================== Launch Minecraft ====================
+Info: Launcher version: snowdrop-20260116-4b61189-main_v3
+Info: Architecture: arm64
+Info: Device model: OPPO CPH1803
+Info: API version: 27
+Info: Selected Minecraft version: fabric-loader-0.16.14-1.17.1
+Info: Custom Java arguments: "-Xmx512m -Xms256m -Xmn64m -XX:+DisableExplicitGC -XX:+UseG1GC -XX:MaxTenuringThreshold=10 -XX:MaxGCPauseMillis=50 -XX:-UseGCOverheadLimit -XX:SurvivorRatio=8 -XX:TargetSurvivorRatio=90 -Dfml.ignorePatchDiscrepancies=true -Dfml.ignoreInvalidMinecraftCertificates=true -XX:+UseCompressedOops -XX:+OptimizeStringConcat -XX:ReservedCodeCacheSize=512m -XX:ParallelGCThreads=4 -Dorg.lwjgl.util.DebugLoader=true"
+==================== Env Map ====================
+Renderer Tag: opengles3
+Added custom env: POJAV_NATIVEDIR=/data/app/net.kdt.pojavlaunch.firefly-0wBDA2ZCbE_1xKdhtTbuwg==/lib/arm64
+Added custom env: JAVA_HOME=/data/user/0/net.kdt.pojavlaunch.firefly/runtimes/Internal-17
+Added custom env: HOME=/storage/emulated/0/games/Pojav-Glow-Worm
+Added custom env: TMPDIR=/data/user/0/net.kdt.pojavlaunch.firefly/cache
+Added custom env: PATH=/data/user/0/net.kdt.pojavlaunch.firefly/runtimes/Internal-17/bin:/sbin:/system/sbin:/system/bin:/system/xbin:/vendor/bin:/vendor/xbin
+Added custom env: LD_LIBRARY_PATH=/data/app/com.fcl.plugin.mobileglues-tpZt1vwETc-4WGKg9Soybw==/lib/arm64:/data/user/0/net.kdt.pojavlaunch.firefly/runtimes/Internal-17/lib/jli:/data/user/0/net.kdt.pojavlaunch.firefly/runtimes/Internal-17/lib:/system/lib64:/vendor/lib64:/vendor/lib64/hw:/data/app/net.kdt.pojavlaunch.firefly-0wBDA2ZCbE_1xKdhtTbuwg==/lib/arm64
+Added custom env: FORCE_VSYNC=false
+Added custom env: AWTSTUB_WIDTH=1520
+Added custom env: AWTSTUB_HEIGHT=720
+Added custom env: MOD_ANDROID_RUNTIME=/data/user/0/net.kdt.pojavlaunch.firefly/runtime_mod
+Added custom env: PGW_VERSION_CODE=100001689
+Added custom env: BRIDGE_CONFIG=default
+Added custom env: POJAV_BIG_CORE_AFFINITY=1
+Added custom env: LIBGL_VGPU_DUMP=1
+Added custom env: GL_WORKAROUND_FRAMEBUFFER=1
+Added custom env: FD_DEV_FEATURES=enable_tp_ubwc_flag_hint=1
+Added custom env: OUTPUT_MESA_INFO=1
+Added custom env: JSP=/data/app/net.kdt.pojavlaunch.firefly-0wBDA2ZCbE_1xKdhtTbuwg==/lib/arm64/libjsph17.so
+Added custom env: INST_FABRIC=1
+Added custom env: DRIVER_PATH=/data/user/0/net.kdt.pojavlaunch.firefly/turnip/PurpleVK-25.0.0-A7XX
+Added custom env: LIBGL_ES=2
+Added custom env: POJAVEXEC_EGL=libmobileglues.so
+Added custom env: LIBGL_EGL=libmobileglues.so
+Added custom env: MG_COUNT_LAUNCH=1
+==================== Dlopen Library ====================
+Initializing MobileGlues ...
+The Open Source License of MobileGlues: 
+  GNU LGPL-2.1 License
+MG_DIR_PATH = /sdcard/MG
+[MobileGlues] Setting: enableAngle                 = false
+[MobileGlues] Setting: ignoreError                 = 2
+[MobileGlues] Setting: enableExtComputeShader      = true
+[MobileGlues] Setting: enableExtTimerQuery         = false
+[MobileGlues] Setting: enableExtDirectStateAccess  = false
+[MobileGlues] Setting: maxGlslCacheSize            = 64
+[MobileGlues] Setting: angleDepthClearFixMode      = 0
+[MobileGlues] Setting: bufferCoherentAsFlush       = 1
+[MobileGlues] Setting: customGLVersion             = 4.0.0
+[MobileGlues] Setting: fsr1Setting                 = 0
+[MobileGlues] Setting: hideMGEnvLevel              = 0
+EGL initialized successfully
+OpenGL ES Version: OpenGL ES 3.2 (320)
+==================== Launch JVM ====================
+Not Detected GL_EXT_multi_draw_indirect!
+Enable-capability extensions: multisample_compatibility=0 clip_cull_distance=1 depth_clamp=0 sRGB_write_control=1 NV_polygon_mode=0 OES_sample_shading=1
+multidrawMode/multidrawDisableBackends are no longer used. The selection is an order now: multidrawOrder (global, backend names best first, may contain "native") and multidrawOrder<EntryPoint> for per-function exceptions.
+multidrawModeArrays is no longer used; see multidrawOrder / multidrawOrderArrays
+[MobileGlues] multidrawOrderArrays               = unroll
+[MobileGlues] multidrawOrderElements             = indirect > unroll
+[MobileGlues] multidrawOrderElementsBaseVertex   = indirect > basevertex > unroll > compute
+[MobileGlues] multidrawOrderArraysIndirect       = indirect
+[MobileGlues] multidrawOrderElementsIndirect     = indirect
+OpenJDK 64-Bit Server VM warning: getcpu(2) system call not supported by kernel
+Arc Capes DNS Injector
+Parts of Alibaba's DCM library were used, please read https://github.com/alibaba/java-dns-cache-manipulator/blob/main/README.md for more info
+Added DNS cache entry: s.optifine.net/23.95.137.176
+[MioPatcher]: MioPatcher is running!
+2026-10-16 15:48:55,750 main ERROR appender Console has no parameter that matches element Policies
+[15:48:56] [main/INFO]: Loading Minecraft 1.17.1 with Fabric Loader 0.16.14
+[15:48:58] [main/INFO]: Loading 64 mods:
+	- cullleaves 2.3.2
+	   \-- midnightlib 0.2.9
+	- entityculling 1.3.3
+	- fabric 0.46.1+1.17
+	   |-- fabric-api-base 0.4.0+cf39a74318
+	   |-- fabric-api-lookup-api-v1 1.5.0+e821752d18
+	   |-- fabric-biome-api-v1 3.2.2+cf39a74318
+	   |-- fabric-blockrenderlayer-v1 1.1.6+cf39a74318
+	   |-- fabric-command-api-v1 1.1.4+cf39a74318
+	   |-- fabric-commands-v0 0.2.3+cf39a74318
+	   |-- fabric-containers-v0 0.1.13+cf39a74318
+	   |-- fabric-content-registries-v0 0.4.1+3447790d18
+	   |-- fabric-crash-report-info-v1 0.1.6+cf39a74318
+	   |-- fabric-dimensions-v1 2.0.15+b556f28c18
+	   |-- fabric-entity-events-v1 1.4.1+377137cc18
+	   |-- fabric-events-interaction-v0 0.4.12+e99fbe1218
+	   |-- fabric-events-lifecycle-v0 0.2.4+cf39a74318
+	   |-- fabric-game-rule-api-v1 1.0.8+cf39a74318
+	   |-- fabric-item-api-v1 1.3.0+6617390918
+	   |-- fabric-item-groups-v0 0.3.2+cf39a74318
+	   |-- fabric-key-binding-api-v1 1.0.6+2a2bb57318
+	   |-- fabric-keybindings-v0 0.2.4+cf39a74318
+	   |-- fabric-lifecycle-events-v1 1.4.6+0392f3a618
+	   |-- fabric-loot-tables-v1 1.0.5+cf39a74318
+	   |-- fabric-mining-level-api-v1 1.0.3+cf39a74318
+	   |-- fabric-mining-levels-v0 0.1.7+cf39a74318
+	   |-- fabric-models-v0 0.3.1+cf39a74318
+	   |-- fabric-networking-api-v1 1.0.14+cf39a74318
+	   |-- fabric-networking-blockentity-v0 0.2.12+cf39a74318
+	   |-- fabric-networking-v0 0.3.3+cf39a74318
+	   |-- fabric-object-builder-api-v1 1.11.1+f907116918
+	   |-- fabric-object-builders-v0 0.7.8+cf39a74318
+	   |-- fabric-particles-v1 0.2.5+cf39a74318
+	   |-- fabric-registry-sync-v0 0.8.0+ea29b33318
+	   |-- fabric-renderer-api-v1 0.4.6+ce16ae5918
+	   |-- fabric-renderer-indigo 0.4.10+ce16ae5918
+	   |-- fabric-renderer-registries-v1 3.2.6+cf39a74318
+	   |-- fabric-rendering-data-attachment-v1 0.1.6+cf39a74318
+	   |-- fabric-rendering-fluids-v1 0.2.1+cf39a74318
+	   |-- fabric-rendering-v0 1.1.7+cf39a74318
+	   |-- fabric-rendering-v1 1.10.1+377137cc18
+	   |-- fabric-resource-conditions-api-v1 1.0.1+591a0f2118
+	   |-- fabric-resource-loader-v0 0.4.10+f09604ce18
+	   |-- fabric-screen-api-v1 1.0.5+cf39a74318
+	   |-- fabric-screen-handler-api-v1 1.1.9+cf39a74318
+	   |-- fabric-structure-api-v1 1.2.0+48a9ad8918
+	   |-- fabric-tag-extensions-v0 1.2.3+cf39a74318
+	   |-- fabric-textures-v0 1.0.7+cf39a74318
+	   |-- fabric-tool-attribute-api-v1 1.3.3+3b96517518
+	   \-- fabric-transfer-api-v1 1.5.4+cf39a74318
+	- fabricloader 0.16.14
+	   \-- mixinextras 0.4.1
+	- ferritecore 3.0.3
+	- ffmpegbridge 1.0.4
+	- java 17
+	- krypton 0.1.4
+	   \-- com_velocitypowered_velocity-native 1.1.0-SNAPSHOT
+	- lazydfu 0.1.2
+	- minecraft 1.17.1
+	- optium 0.1.0-dev
+	   |-- mm 2.3
+	   \-- net_fabricmc_tiny-remapper 0.8.4
+	- replaymod 1.17.1-2.6.20
+	   |-- fabric-api-base 0.4.0+cf39a74318
+	   |-- fabric-key-binding-api-v1 1.0.6+2a2bb57318
+	   |-- fabric-networking-api-v1 1.0.14+cf39a74318
+	   |-- fabric-resource-loader-v0 0.4.10+f09604ce18
+	   \-- fabric-screen-api-v1 1.0.5+cf39a74318
+	- replaymodaudiorender 0.2.0+1.14.4
+[15:48:58] [main/WARN]: Found 1 non-fabric mod:
+	- preview_OptiFine_1.17.1_HD_U_H2_pre1.jar
+[15:48:58] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/libraries/net/fabricmc/sponge-mixin/0.15.5+mixin.0.8.7/sponge-mixin-0.15.5+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[15:48:59] [main/INFO]: Compatibility level set to JAVA_16
+[15:49:01] [main/WARN]: Reference map 'mixins.nonmmlauncher.replaymod.refmap.json' for mixins.nonmmlauncher.replaymod.json could not be read. If this is a development environment you can ignore this message
+[Optium] No Sodium/Iris renderer detected; enabling the OptiFine bridge.
+[Optium] OptiFine runtime preparation started
+Found existing patched optifine jar, using that
+[Optium] Warm-cache validation took 692 ms
+[Optium] OptiFine class replacement registration took 29 ms
+[Optium] Total early bridge setup took 765 ms
+[Optium] Applying the ReplayMod jGui keyboard workaround through Mixin's config registry.
+[Optium] Disabled ReplayMod's jGui MixinKeyboardListener (only) to bypass the OptiFine charTypedOptifine conflict.
+Replay Mod is still using the traditional Early Riser initialisation
+[FFmpegBridge] PATH wrapper=/data/user/0/net.kdt.pojavlaunch.firefly/runtimes/Internal-17/bin/ffmpeg
+[FFmpegBridge] bundled ARM64 FFmpeg initialized
+[FFmpegBridge] executable=/data/user/0/net.kdt.pojavlaunch.firefly/cache/ffmpegbridge/arm64-v8a/ffmpeg
+[15:49:06] [main/WARN]: Error loading class: shadersmod/client/ShadersRender (java.lang.ClassNotFoundException: shadersmod/client/ShadersRender)
+[15:49:06] [main/WARN]: Error loading class: net/coderbot/iris/uniforms/CommonUniforms (java.lang.ClassNotFoundException: net/coderbot/iris/uniforms/CommonUniforms)
+[15:49:06] [main/WARN]: Error loading class: net/coderbot/iris/Iris (java.lang.ClassNotFoundException: net/coderbot/iris/Iris)
+[15:49:06] [main/WARN]: Error loading class: shadersmod/client/ShadersRender (java.lang.ClassNotFoundException: shadersmod/client/ShadersRender)
+[15:49:06] [main/WARN]: Error loading class: shadersmod/client/ShadersRender (java.lang.ClassNotFoundException: shadersmod/client/ShadersRender)
+[15:49:07] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[15:49:16] [main/INFO]: [OptiFine] (Reflector) Field not found: World.tileEntitiesToBeRemoved
+[15:49:24] [main/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_3489.createOptional
+[LWJGL] Failed to load a library. Possible solutions:
+	a) Add the directory that contains the shared library to -Djava.library.path or -Dorg.lwjgl.librarypath.
+	b) Add the JAR that contains the shared library to the classpath.
+[LWJGL] Enable debug mode with -Dorg.lwjgl.util.Debug=true for better diagnostics.
+[15:49:42] [Render thread/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[15:49:44] [Render thread/ERROR]: Failed to verify authentication
+com.mojang.authlib.exceptions.AuthenticationException: com.mojang.authlib.exceptions.MinecraftClientException: Failed to read from https://api.minecraftservices.com/privileges due to api.minecraftservices.com
+	at com.mojang.authlib.exceptions.MinecraftClientException.toAuthenticationException(MinecraftClientException.java:28) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.checkPrivileges(YggdrasilSocialInteractionsService.java:116) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.<init>(YggdrasilSocialInteractionsService.java:42) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.createSocialInteractionsService(YggdrasilAuthenticationService.java:151) ~[authlib-2.3.31.jar:?]
+	at net.minecraft.class_310.method_31382(class_310.java:670) [client-intermediary.jar:?]
+	at net.minecraft.class_310.<init>(class_310.java:429) [client-intermediary.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:179) [client-intermediary.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) [fabric-loader-0.16.14.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.16.14.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.16.14.jar:?]
+Caused by: com.mojang.authlib.exceptions.MinecraftClientException: Failed to read from https://api.minecraftservices.com/privileges due to api.minecraftservices.com
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:85) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:47) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.checkPrivileges(YggdrasilSocialInteractionsService.java:104) ~[authlib-2.3.31.jar:?]
+	... 8 more
+Caused by: java.net.UnknownHostException: api.minecraftservices.com
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:178) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:533) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:638) ~[?:?]
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:266) ~[?:?]
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:380) ~[?:?]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1307) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1148) ~[?:?]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1717) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1641) ~[?:?]
+	at java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529) ~[?:?]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:308) ~[?:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.readInputStream(MinecraftClient.java:64) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:47) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilSocialInteractionsService.checkPrivileges(YggdrasilSocialInteractionsService.java:104) ~[authlib-2.3.31.jar:?]
+	... 8 more
+[15:49:44] [Render thread/INFO]: Setting user: Z3MON
+[15:49:44] [Render thread/WARN]: @Inject(@At("INVOKE")) Shift.BY=3 on fabric-lifecycle-events-v1.mixins.json:client.WorldChunkMixin from mod fabric-lifecycle-events-v1::handler$zdo000$fabric-lifecycle-events-v1$onLoadBlockEntity exceeds the maximum allowed value: 0. Increase the value of maxShiftBy to suppress this warning.
+[15:49:45] [Render thread/INFO]: Compression will use Java 11, encryption will use Java
+[15:49:45] [Render thread/INFO]: Definitely not up to no good
+[15:49:46] [Render thread/INFO]: [Indigo] Registering Indigo renderer!
+[15:49:46] [Render thread/INFO]: [Indigo] Compatibility mode enabled.
+[15:49:46] [Render thread/INFO]: Krypton is now accelerating your Minecraft client's networking stack 🚀
+[15:49:46] [Render thread/INFO]: Note that Krypton is most effective on servers, not the client.
+[15:49:46] [ForkJoinPool.commonPool-worker-1/ERROR]: Unable to load player hats because of an I/O Exception: raw.githubusercontent.com
+Registered forkAndExec
+[15:49:48] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_304.getKeyModifier
+[15:49:48] [Render thread/INFO]: Backend library: LWJGL version 3.3.3-snapshot
+OSMDroid: Loading Vulkan regularly...
+OSMDroid: Loaded Vulkan, ptr=0x29173fcedb7d7911
+Config Bridge: Config not found, using default config
+EGLBridge: Binding to OpenGL ES
+bigcore: big CPU number is 7, frequency 1804800 Hz
+bigcore: setting affinity failed: Unknown error -1
+[15:49:49] [Render thread/INFO]: [STDOUT]: [LWJGL] Workaround glCheckFramebufferStatus issue on 1.13+ 64-bit
+bigcore: big CPU number is 7, frequency 1804800 Hz
+bigcore: setting affinity failed: Unknown error -1
+[15:49:49] [Render thread/INFO]: [OptiFine] 
+[15:49:49] [Render thread/INFO]: [OptiFine] OptiFine_1.17.1_HD_U_H2_pre1
+[15:49:49] [Render thread/INFO]: [OptiFine] Build: 20211104-233441
+[15:49:49] [Render thread/INFO]: [OptiFine] OS: Linux (aarch64) version Android-8.1.0
+[15:49:49] [Render thread/INFO]: [OptiFine] Java: 17.0.18, N/A
+[15:49:49] [Render thread/INFO]: [OptiFine] VM: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+[15:49:49] [Render thread/INFO]: [OptiFine] LWJGL: 3.4.0
+[15:49:49] [Render thread/INFO]: [OptiFine] OpenGL: Adreno (TM) 506 | OpenGL ES 3.2, version 4.0.0 MobileGlues 2.0.0, Swung0x48, BZLZHH, Tungsten
+[15:49:49] [Render thread/INFO]: [OptiFine] OpenGL Version: 4.0.0
+[15:49:49] [Render thread/INFO]: [OptiFine] Maximum texture size: 16384x16384
+[15:49:49] [VersionCheck/INFO]: [OptiFine] Checking for new version
+[15:49:49] [VersionCheck/INFO]: [OptiFine] java.net.UnknownHostException: optifine.net
+[15:49:50] [Render thread/INFO]: [Shaders] OpenGL Version: 4.0.0 MobileGlues 2.0.0
+[15:49:50] [Render thread/INFO]: [Shaders] Vendor:  Swung0x48, BZLZHH, Tungsten
+[15:49:50] [Render thread/INFO]: [Shaders] Renderer: Adreno (TM) 506 | OpenGL ES 3.2
+[15:49:50] [Render thread/INFO]: [Shaders] Capabilities:  2.0  2.1  3.0  3.2  4.0 
+[15:49:50] [Render thread/INFO]: [Shaders] GL_MAX_DRAW_BUFFERS: 8
+[15:49:50] [Render thread/INFO]: [Shaders] GL_MAX_COLOR_ATTACHMENTS: 8
+[15:49:50] [Render thread/INFO]: [Shaders] GL_MAX_TEXTURE_IMAGE_UNITS: 32
+[15:49:50] [Render thread/INFO]: [Shaders] Load shaders configuration.
+[15:49:50] [Render thread/INFO]: [Shaders] No shaderpack loaded.
+[15:49:51] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/MC_OutlineShader5.zip'
+[15:49:51] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/outlines.zip'
+[15:49:52] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/More Vanilla Herobrine Villagers.zip'
+[15:49:52] [Render thread/WARN]: [OptiFine] (Reflector) java.lang.ClassNotFoundException: sun.misc.SharedSecrets
+[15:49:52] [Render thread/WARN]: [OptiFine] (Reflector) java.lang.ClassNotFoundException: jdk.internal.misc.SharedSecrets
+[15:49:52] [Render thread/WARN]: [OptiFine] (Reflector) java.lang.ClassNotFoundException: sun.misc.VM
+[15:49:52] [Render thread/WARN]: [OptiFine] (Reflector) java.lang.reflect.InaccessibleObjectException: Unable to make public static long jdk.internal.misc.VM.maxDirectMemory() accessible: module java.base does not "exports jdk.internal.misc" to unnamed module @2eea88a1
+[15:49:55] [Render thread/INFO]: Reloading ResourceManager: Default, Fabric Mods (Cull Leaves, EntityCulling-Fabric, Fabric API, Fabric API Base, Fabric API Lookup API (v1), Fabric Biome API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Command API (v1), Fabric Commands (v0), Fabric Containers (v0), Fabric Content Registries (v0), Fabric Crash Report Info (v1), Fabric Dimensions API (v1), Fabric Entity Events (v1), Fabric Events Interaction (v0), Fabric Events Lifecycle (v0), Fabric Game Rule API (v1), Fabric Item API (v1), Fabric Item Groups (v0), Fabric Key Binding API (v1), Fabric Key Bindings (v0), Fabric Lifecycle Events (v1), Fabric Loot Tables (v1), Fabric Mining Level API (v1), Fabric Mining Levels (v0), Fabric Models (v0), Fabric Networking API (v1), Fabric Networking Block Entity (v0), Fabric Networking (v0), Fabric Object Builder API (v1), Fabric Object Builders (v0), Fabric Particles (v1), Fabric Registry Sync (v0), Fabric Renderer API (v1), Fabric Renderer - Indigo, Fabric Renderer Registries (v1), Fabric Rendering Data Attachment (v1), Fabric Rendering Fluids (v1), Fabric Rendering (v0), Fabric Rendering (v1), Fabric Resource Conditions API (v1), Fabric Resource Loader (v0), Fabric Screen API (v1), Fabric Screen Handler API (v1), Fabric Structure API (v1), Fabric Tag Extensions (v0), Fabric Textures (v0), Fabric Tool Attribute API (v1), Fabric Transfer API (v1), Fabric Loader, FFmpeg Bridge, Krypton, LazyDFU, MidnightLib, Manningham Mills, Optium, Replay Mod, ReplayModAudioRender), replaymod_lang
+[15:49:55] [Render thread/INFO]: [OptiFine] *** Reloading textures ***
+[15:49:55] [Render thread/INFO]: [OptiFine] Resource packs: Fabric Mods
+[15:49:56] [Render thread/WARN]: A problem with the database occurred, the hats could not be initialized.
+[15:49:56] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_4696.canRenderInLayer
+[15:49:56] [Render thread/INFO]: [OptiFine] *** Reflector Forge ***
+[15:49:56] [Render thread/INFO]: [OptiFine] (Reflector) Class not present: mods.betterfoliage.client.BetterFoliageClient
+[15:49:56] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_773.getTexture
+[15:49:56] [Render thread/INFO]: [OptiFine] (Reflector) Field not present: net.minecraft.class_3193.currentlyLoading
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_1299.getTags
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_3611.getTags
+[15:49:57] [Worker-Main-3/INFO]: [OptiFine] Multitexture: false
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_2791.getWorldForge
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_304.setKeyConflictContext
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_304.setKeyModifierAndCode
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_4696.canRenderInLayer
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Constructor not present: net.minecraft.class_3228, params: class net.minecraft.class_3230, int, class java.lang.Object, boolean
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_3228.isForceTicks
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_5294.getCloudRenderHandler
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_5294.getSkyRenderHandler
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_5294.getWeatherParticleRenderHandler
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_5294.getWeatherRenderHandler
+[15:49:57] [Render thread/INFO]: [OptiFine] (Reflector) Method not present: net.minecraft.class_727.updateSprite
+[15:49:57] [Render thread/INFO]: [OptiFine] *** Reflector Vanilla ***
+[15:50:01] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:50:12] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:12] [Worker-Main-2/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@1cc1031c
+[15:50:12] [Worker-Main-2/INFO]: [OptiFine] Multipass connected textures: false
+[15:50:13] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_pane_white.properties
+[15:50:13] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_white.properties
+[15:50:14] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_orange.properties
+[15:50:15] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_pane_orange.properties
+[15:50:15] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_magenta.properties
+[15:50:16] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_pane_magenta.properties
+[15:50:16] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_light_blue.properties
+[15:50:16] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_pane_light_blue.properties
+[15:50:17] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_pane_yellow.properties
+[15:50:17] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_yellow.properties
+[15:50:17] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_lime.properties
+[15:50:17] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_pane_lime.properties
+[15:50:17] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pane_pink.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pink.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_gray.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_pane_gray.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_light_gray.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_pane_light_gray.properties
+[15:50:18] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_cyan.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_pane_cyan.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_pane_purple.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_purple.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_blue.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_pane_blue.properties
+[15:50:19] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_brown.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_pane_brown.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_green.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_pane_green.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_pane_red.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_red.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_black.properties
+[15:50:20] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_pane_black.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass_pane.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/21_tinted_glass/tinted_glass.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/30_bookshelf/bookshelf.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/40_sandstone/sandstone.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/41_red_sandstone/red_sandstone.properties
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] Multipass connected textures: false
+[15:50:21] [Worker-Main-2/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
+[15:50:21] [Worker-Main-4/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:50:25] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[ALSOFT] (EE) Failed to set real-time priority for thread: Operation not permitted (1)
+[15:50:26] [Render thread/INFO]: OpenAL initialized.
+[15:50:26] [Render thread/INFO]: Sound engine started
+[15:50:27] [Render thread/INFO]: Created: 1024x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 45
+[15:50:27] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:27] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:27] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:27] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:27] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:27] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[15:50:27] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:34] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[15:50:34] [Render thread/INFO]: [OptiFine] Animated sprites: 1
+[15:50:34] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[15:50:34] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:34] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[15:50:34] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:50:34] [Render thread/INFO]: [OptiFine] *** Reloading custom textures ***
+[15:50:34] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@2fa99830
+[15:50:35] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@4efccfc7
+[15:50:35] [Render thread/INFO]: [OptiFine] Disable Forge light pipeline
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: java.nio.file.FileSystemException: /storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/.replay_cache: Invalid argument
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.updateDosAttribute(LinuxDosFileAttributeView.java:278)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setHidden(LinuxDosFileAttributeView.java:196)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setAttribute(LinuxDosFileAttributeView.java:91)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/sun.nio.fs.AbstractFileSystemProvider.setAttribute(AbstractFileSystemProvider.java:81)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/java.nio.file.Files.setAttribute(Files.java:1919)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCacheFolder(ReplayFoldersService.java:49)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.cleanup(ReplayFilesService.java:145)
+[15:50:37] [replaymod-cleanup/INFO]: [STDERR]: 	at java.base/java.lang.Thread.run(Thread.java:840)
+[15:50:57] [Render thread/INFO]: [Shaders] Save shaders configuration.
+[15:51:05] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[15:51:05] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[15:51:05] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[15:51:05] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[15:51:05] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[15:51:05] [Render thread/INFO]: Reloading ResourceManager: Default, Fabric Mods (Fabric Tool Attribute API (v1)), replaymod_lang
+[15:51:07] [Render thread/INFO]: Loaded 7 recipes
+[15:51:08] [Render thread/INFO]: Loaded 1137 advancements
+[15:51:08] [Render thread/INFO]: Applied 0 biome modifications to 0 of 81 new biomes in 12.36 ms
+[15:51:16] [Render thread/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[15:51:16] [Server thread/INFO]: Starting integrated minecraft server version 1.17.1
+[15:51:16] [Server thread/INFO]: Generating keypair
+[15:51:17] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:22] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:23] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:23] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:24] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:24] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:25] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:25] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:26] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:26] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:27] [Render thread/INFO]: Preparing spawn area: 0%
+[15:51:27] [Render thread/INFO]: Preparing spawn area: 1%
+[15:51:28] [Render thread/INFO]: Preparing spawn area: 1%
+[15:51:28] [Render thread/INFO]: Preparing spawn area: 3%
+[15:51:29] [Render thread/INFO]: Preparing spawn area: 4%
+[15:51:29] [Render thread/INFO]: Preparing spawn area: 4%
+[15:51:30] [Render thread/INFO]: Preparing spawn area: 4%
+[15:51:31] [Render thread/INFO]: Preparing spawn area: 4%
+[15:51:31] [Render thread/INFO]: Preparing spawn area: 5%
+[15:51:31] [Render thread/INFO]: Preparing spawn area: 7%
+[15:51:32] [Render thread/INFO]: Preparing spawn area: 10%
+[15:51:32] [Render thread/INFO]: Preparing spawn area: 13%
+[15:51:33] [Render thread/INFO]: Preparing spawn area: 19%
+[15:51:33] [Render thread/INFO]: Preparing spawn area: 21%
+[15:51:34] [Render thread/INFO]: Preparing spawn area: 21%
+[15:51:34] [Render thread/INFO]: Preparing spawn area: 21%
+[15:51:35] [Render thread/INFO]: Preparing spawn area: 32%
+[15:51:36] [Render thread/INFO]: Preparing spawn area: 39%
+[15:51:36] [Render thread/INFO]: Preparing spawn area: 39%
+[15:51:36] [Render thread/INFO]: Preparing spawn area: 46%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:39] [Render thread/INFO]: Preparing spawn area: 50%
+[15:51:40] [Render thread/INFO]: Preparing spawn area: 57%
+[15:51:40] [Render thread/INFO]: Preparing spawn area: 57%
+[15:51:41] [Render thread/INFO]: Preparing spawn area: 68%
+[15:51:41] [Render thread/INFO]: Preparing spawn area: 69%
+[15:51:42] [Render thread/INFO]: Preparing spawn area: 69%
+[15:51:42] [Render thread/INFO]: Preparing spawn area: 73%
+[15:51:43] [Render thread/INFO]: Preparing spawn area: 75%
+[15:51:43] [Render thread/INFO]: Preparing spawn area: 81%
+[15:51:44] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:44] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:45] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:45] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:46] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:46] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:47] [Render thread/INFO]: Preparing spawn area: 83%
+[15:51:47] [Render thread/INFO]: Preparing spawn area: 84%
+[15:51:48] [Render thread/INFO]: Preparing spawn area: 85%
+[15:51:48] [Render thread/INFO]: Preparing spawn area: 86%
+[15:51:49] [Render thread/INFO]: Preparing spawn area: 88%
+[15:51:49] [Render thread/INFO]: Preparing spawn area: 90%
+[15:51:50] [Render thread/INFO]: Preparing spawn area: 91%
+[15:51:50] [Render thread/INFO]: Preparing spawn area: 91%
+[15:51:51] [Render thread/INFO]: Preparing spawn area: 93%
+[15:51:51] [Render thread/INFO]: Preparing spawn area: 95%
+[15:51:52] [Render thread/INFO]: Preparing spawn area: 95%
+[15:51:52] [Render thread/INFO]: Preparing spawn area: 96%
+[15:51:53] [Render thread/INFO]: Preparing spawn area: 98%
+[15:51:53] [Render thread/INFO]: Preparing spawn area: 99%
+[15:51:53] [Render thread/INFO]: Time elapsed: 35736 ms
+[15:51:54] [Server thread/INFO]: Changing view distance to 5, from 10
+[15:51:55] [Render thread/WARN]: Failed to find a usable hardware address from the network interfaces; using random bytes: f8:02:09:4b:d3:c3:69:47
+[15:51:56] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2008ms or 40 ticks behind
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: java.nio.file.FileSystemException: /storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/.replay_cache: Invalid argument
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.updateDosAttribute(LinuxDosFileAttributeView.java:278)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setHidden(LinuxDosFileAttributeView.java:196)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setAttribute(LinuxDosFileAttributeView.java:91)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/sun.nio.fs.AbstractFileSystemProvider.setAttribute(AbstractFileSystemProvider.java:81)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/java.nio.file.Files.setAttribute(Files.java:1919)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCacheFolder(ReplayFoldersService.java:49)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCachePathForReplay(ReplayFoldersService.java:61)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:64)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:34)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.recording.handler.ConnectionEventHandler.onConnectedToServerEvent(ConnectionEventHandler.java:145)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//com.replaymod.recording.ReplayModRecording.initiateRecording(ReplayModRecording.java:110)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_635.initiateRecording(class_635.java:1539)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_635.handler$zna000$earlyInitiateRecording(class_635.java:1526)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_635.method_12586(class_635.java)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_2899.method_12591(class_2899.java:39)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_2899.method_11054(class_2899.java:7)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_2535.method_10759(class_2535.java:163)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_2535.method_10770(class_2535.java:150)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//net.minecraft.class_2535.channelRead0(class_2535.java:53)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:340)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1434)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:348)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:965)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.local.LocalChannel.readInbound(LocalChannel.java:304)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.local.LocalChannel.finishPeerRead0(LocalChannel.java:446)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.local.LocalChannel.access$400(LocalChannel.java:51)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.local.LocalChannel$5.run(LocalChannel.java:404)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.channel.DefaultEventLoop.run(DefaultEventLoop.java:54)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at knot//io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+[15:51:57] [Netty Local Client IO #0/INFO]: [STDERR]: 	at java.base/java.lang.Thread.run(Thread.java:840)
+[15:51:57] [Netty Local Client IO #0/INFO]: [CHAT] [Replay Mod] Recording started
+Oct 16, 2026 3:52:01 PM com.replaymod.replaystudio.lib.viaversion.protocols.v1_12_2to1_13.blockconnections.ConnectionData init
+INFO: Loading block connection mappings ...
+Oct 16, 2026 3:52:02 PM com.replaymod.replaystudio.lib.viaversion.protocols.v1_12_2to1_13.storage.BlockConnectionStorage <clinit>
+INFO: Using FastUtil Long2ObjectOpenHashMap for block connections
+[15:52:08] [Server thread/INFO]: Z3MON[local:E:f51a7d25] logged in with entity id 96 at (26.68608071629065, 64.0, 109.73576890408762)
+[15:52:08] [Server thread/INFO]: Z3MON joined the game
+[15:52:10] [Render thread/INFO]: [STDOUT]: Replacement `renderBlock` call:  method_3355.(Lnet/minecraft/class_2680;Lnet/minecraft/class_2338;Lnet/minecraft/class_1920;Lnet/minecraft/class_4587;Lnet/minecraft/class_4588;ZLjava/util/Random;)Z
+[15:52:11] [Worker-Cape-11/ERROR]: Couldn't download http texture: java.net.SocketException: Network is unreachable
+[15:52:11] [Server thread/INFO]: Saving and pausing game...
+[15:52:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:52:12] [Render thread/INFO]: Loaded 78 advancements
+[15:52:13] [Worker-Main-1/WARN]: Couldn't look up profile properties for com.mojang.authlib.GameProfile@27b20a32[id=00000000-0000-0000-0000-000000000000,name=Z3MON,properties={},legacy=false]
+com.mojang.authlib.exceptions.AuthenticationUnavailableException: Cannot contact authentication server
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:124) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:98) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillGameProfile(YggdrasilMinecraftSessionService.java:193) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:67) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService$1.load(YggdrasilMinecraftSessionService.java:64) ~[authlib-2.3.31.jar:?]
+	at com.google.common.cache.LocalCache$LoadingValueReference.loadFuture(LocalCache.java:3716) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.loadSync(LocalCache.java:2424) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.lockedGetOrLoad(LocalCache.java:2298) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2211) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache.get(LocalCache.java:4154) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:4158) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:5147) ~[guava-21.0.jar:?]
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:5153) ~[guava-21.0.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilMinecraftSessionService.fillProfileProperties(YggdrasilMinecraftSessionService.java:183) ~[authlib-2.3.31.jar:?]
+	at net.minecraft.class_310.method_1539(class_310.java:2577) ~[client-intermediary.jar:?]
+	at net.minecraft.class_1071.method_4653(class_1071.java:97) ~[client-intermediary.jar:?]
+	at java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1395) [?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) [?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) [?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) [?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) [?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) [?:?]
+Caused by: java.net.UnknownHostException: sessionserver.mojang.com
+	at sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:572) ~[?:?]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.net.Socket.connect(Socket.java:633) ~[?:?]
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304) ~[?:?]
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:178) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:533) ~[?:?]
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:638) ~[?:?]
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:266) ~[?:?]
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:380) ~[?:?]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1307) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1148) ~[?:?]
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1717) ~[?:?]
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1641) ~[?:?]
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:224) ~[?:?]
+	at com.mojang.authlib.HttpAuthenticationService.performGetRequest(HttpAuthenticationService.java:140) ~[authlib-2.3.31.jar:?]
+	at com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService.makeRequest(YggdrasilAuthenticationService.java:103) ~[authlib-2.3.31.jar:?]
+	... 21 more
+[15:52:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:52:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:52:15] [Server thread/INFO]: Saving and pausing game...
+[15:52:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:52:16] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:52:16] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:52:16] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 5041ms or 100 ticks behind
+[15:52:41] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2071ms or 41 ticks behind
+[15:52:45] [Server thread/INFO]: Saving and pausing game...
+[15:52:46] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:52:47] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:52:47] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:53:33] [Server thread/INFO]: Saving and pausing game...
+[15:53:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:53:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:53:33] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:54:08] [Server thread/INFO]: Saving and pausing game...
+[15:54:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:54:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:54:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:54:29] [Server thread/INFO]: Saving and pausing game...
+[15:54:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:54:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:54:29] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:54:34] [Render thread/INFO]: [Shaders] Loaded shaderpack: Mellow Edited v3.2.zip
+[15:54:34] [Render thread/INFO]: [OptiFine] [Shaders] Worlds: -1, 0, 1
+[15:54:34] [Render thread/WARN]: [OptiFine] Ambiguous shader option: furthest
+[15:54:34] [Render thread/WARN]: [OptiFine]  - in world-1/shadow.vsh: dhRenderDistance
+[15:54:34] [Render thread/WARN]: [OptiFine]  - in world-1/shadow.vsh: far
+[15:54:45] [Render thread/WARN]: [OptiFine] Unknown macro value: ENTITY_SHADOWS
+[15:54:45] [Render thread/WARN]: [OptiFine] Unknown macro value: BLOCK_ENTITY_SHADOWS
+[15:54:45] [Render thread/WARN]: [OptiFine] Unknown macro value: CLOUD_STYLE
+[15:54:45] [Render thread/WARN]: [OptiFine] Unknown macro value: TAA_MODE
+[15:54:45] [Render thread/WARN]: [OptiFine] Unknown macro value: TAA_MODE
+[15:54:45] [Render thread/WARN]: [OptiFine] Invalid shader option: TONEMAP_MIN_R
+[15:54:45] [Render thread/WARN]: [OptiFine] Invalid shader option: TONEMAP_MIN_G
+[15:54:45] [Render thread/WARN]: [OptiFine] Invalid shader option: TONEMAP_MIN_B
+[15:54:45] [Render thread/WARN]: [OptiFine] Invalid shader option: entityShadowDistanceMul
+[15:54:45] [Render thread/WARN]: [OptiFine] [Shaders] Invalid option: entityShadowDistanceMul, key: screen.SHADOW_SETTINGS
+[15:54:45] [Render thread/WARN]: [OptiFine] [Shaders] Invalid option: REFLECT_SUN, key: screen.WATER
+[15:54:45] [Render thread/WARN]: [OptiFine] [Shaders] Invalid option: DH_NOISE, key: screen.DH_SETTINGS
+[15:54:45] [Render thread/INFO]: [OptiFine] [Shaders] Parsing block mappings: /shaders/block.properties
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:flowing_water
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:mangrove_leaves
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cherry_leaves
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_oak_leaves
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_hanging_moss
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cherry_sapling
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:short_grass
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:closed_eyeblossom
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:open_eyeblossom
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_oak_sapling
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:bush
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:firefly_bush
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cactus_flower
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:short_dry_grass
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:tall_dry_grass
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pitcher_plant
+[15:54:45] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pitcher_plant
+[15:54:45] [Render thread/INFO]: [Shaders] Custom texture: texture.gbuffers.noisetex = /lib/cloud_noise+normal.png
+[15:54:45] [Render thread/INFO]: [Shaders] Custom texture: texture.composite.colortex3 = /lib/smaaArea.png
+[15:54:45] [Render thread/INFO]: [Shaders] Custom texture: texture.composite.colortex5 = /lib/smaaSearch.png
+[15:54:45] [Render thread/INFO]: [Shaders] Custom texture: texture.deferred.noisetex = /lib/cloud_noise+normal.png
+[15:54:45] [Render thread/INFO]: [Shaders] Custom texture: texture.deferred.colortex6 = /lib/worley_perlin.bin TEXTURE_3D R8 64 64 64 RED UNSIGNED_BYTE
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: timeAngle
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: d
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: e
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: timeThing
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: sunAngleAtHome
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: gr
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: jitterX
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: jitterY
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: taaJitter
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: nightStrength
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: dayStrength
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: sunsetStrength
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: sunriseStrength
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: resolution
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: resolutionInv
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosx
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosy
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosz
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: sunL
+[15:54:45] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonL
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: sunOrMoonPosN
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: sunPosN
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: isOutdoorsSmooth
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: precipitationSmooth
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: rainbowStrength
+[15:54:45] [Render thread/INFO]: [Shaders] Custom uniform: fogAmount
+[15:54:45] [Render thread/INFO]: [Shaders] Relative size colortex5: 0.25 0.25
+[15:54:46] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/MC_OutlineShader5.zip'
+[15:54:46] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/outlines.zip'
+[15:54:46] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/More Vanilla Herobrine Villagers.zip'
+[15:54:46] [Render thread/INFO]: Reloading ResourceManager: Default, Fabric Mods (Cull Leaves, EntityCulling-Fabric, Fabric API, Fabric API Base, Fabric API Lookup API (v1), Fabric Biome API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Command API (v1), Fabric Commands (v0), Fabric Containers (v0), Fabric Content Registries (v0), Fabric Crash Report Info (v1), Fabric Dimensions API (v1), Fabric Entity Events (v1), Fabric Events Interaction (v0), Fabric Events Lifecycle (v0), Fabric Game Rule API (v1), Fabric Item API (v1), Fabric Item Groups (v0), Fabric Key Binding API (v1), Fabric Key Bindings (v0), Fabric Lifecycle Events (v1), Fabric Loot Tables (v1), Fabric Mining Level API (v1), Fabric Mining Levels (v0), Fabric Models (v0), Fabric Networking API (v1), Fabric Networking Block Entity (v0), Fabric Networking (v0), Fabric Object Builder API (v1), Fabric Object Builders (v0), Fabric Particles (v1), Fabric Registry Sync (v0), Fabric Renderer API (v1), Fabric Renderer - Indigo, Fabric Renderer Registries (v1), Fabric Rendering Data Attachment (v1), Fabric Rendering Fluids (v1), Fabric Rendering (v0), Fabric Rendering (v1), Fabric Resource Conditions API (v1), Fabric Resource Loader (v0), Fabric Screen API (v1), Fabric Screen Handler API (v1), Fabric Structure API (v1), Fabric Tag Extensions (v0), Fabric Textures (v0), Fabric Tool Attribute API (v1), Fabric Transfer API (v1), Fabric Loader, FFmpeg Bridge, Krypton, LazyDFU, MidnightLib, Manningham Mills, Optium, Replay Mod, ReplayModAudioRender), replaymod_lang
+[15:54:46] [Render thread/INFO]: [OptiFine] *** Reloading textures ***
+[15:54:46] [Render thread/INFO]: [OptiFine] Resource packs: Fabric Mods
+[15:54:46] [Render thread/WARN]: Error loading class: shadersmod/client/ShadersRender (java.lang.ClassNotFoundException: shadersmod/client/ShadersRender)
+[15:54:47] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:54:47] [Worker-Main-3/INFO]: [OptiFine] Multitexture: false
+[15:54:47] [Worker-Main-4/INFO]: [OptiFine] Multitexture: false
+[15:54:54] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:54:54] [Worker-Main-5/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@21743493
+[15:54:54] [Worker-Main-5/INFO]: [OptiFine] Multipass connected textures: false
+[15:54:54] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_pane_white.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_white.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_orange.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_pane_orange.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_magenta.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_pane_magenta.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_light_blue.properties
+[15:54:55] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_pane_light_blue.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_pane_yellow.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_yellow.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_lime.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_pane_lime.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pane_pink.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pink.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_gray.properties
+[15:54:56] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_pane_gray.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_light_gray.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_pane_light_gray.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_cyan.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_pane_cyan.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_pane_purple.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_purple.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_blue.properties
+[15:54:57] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_pane_blue.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_brown.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_pane_brown.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_green.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_pane_green.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_pane_red.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_red.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_black.properties
+[15:54:58] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_pane_black.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass_pane.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/21_tinted_glass/tinted_glass.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/30_bookshelf/bookshelf.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/40_sandstone/sandstone.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/41_red_sandstone/red_sandstone.properties
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] Multipass connected textures: false
+[15:54:59] [Worker-Main-5/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:55:01] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[ALSOFT] (EE) Failed to set real-time priority for thread: Operation not permitted (1)
+[15:55:02] [Render thread/INFO]: OpenAL initialized.
+[15:55:02] [Render thread/INFO]: Sound engine started
+[15:55:03] [Render thread/INFO]: Created: 1024x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 1024x1024, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 1024x1024, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 45
+[15:55:03] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x128, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x128, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:03] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x512, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x512, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:03] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x512, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x512, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:03] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:03] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:03] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x256, mipmaps: 0
+[15:55:03] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:08] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [OptiFine] Animated sprites: 1
+[15:55:08] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:08] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map normal: 128x128, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [Shaders] Allocate texture map specular: 128x128, mipmaps: 0
+[15:55:08] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:55:08] [Render thread/INFO]: [OptiFine] *** Reloading custom textures ***
+[15:55:08] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@159a8c0c
+[15:55:08] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@69301d47
+[15:55:08] [Render thread/INFO]: [OptiFine] Disable Forge light pipeline
+[15:55:09] [Render thread/INFO]: [OptiFine] [Shaders] Parsing block mappings: /shaders/block.properties
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:flowing_water
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:mangrove_leaves
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cherry_leaves
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_oak_leaves
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_hanging_moss
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cherry_sapling
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:short_grass
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:closed_eyeblossom
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:open_eyeblossom
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pale_oak_sapling
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:bush
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:firefly_bush
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:cactus_flower
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:short_dry_grass
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:tall_dry_grass
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pitcher_plant
+[15:55:09] [Render thread/WARN]: [OptiFine] Shaders: Block not found for name: minecraft:pitcher_plant
+[15:55:09] [Render thread/INFO]: [Shaders] Custom texture: texture.gbuffers.noisetex = /lib/cloud_noise+normal.png
+[15:55:09] [Render thread/INFO]: [Shaders] Custom texture: texture.composite.colortex3 = /lib/smaaArea.png
+[15:55:09] [Render thread/INFO]: [Shaders] Custom texture: texture.composite.colortex5 = /lib/smaaSearch.png
+[15:55:09] [Render thread/INFO]: [Shaders] Custom texture: texture.deferred.noisetex = /lib/cloud_noise+normal.png
+[15:55:09] [Render thread/INFO]: [Shaders] Custom texture: texture.deferred.colortex6 = /lib/worley_perlin.bin TEXTURE_3D R8 64 64 64 RED UNSIGNED_BYTE
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: timeAngle
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: d
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: e
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: timeThing
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: sunAngleAtHome
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: gr
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: jitterX
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: jitterY
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: taaJitter
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: nightStrength
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: dayStrength
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: sunsetStrength
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: sunriseStrength
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: resolution
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: resolutionInv
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosx
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosy
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonPosz
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: sunL
+[15:55:09] [Render thread/INFO]: [Shaders] Custom variable: sunOrMoonL
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: sunOrMoonPosN
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: sunPosN
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: isOutdoorsSmooth
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: precipitationSmooth
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: rainbowStrength
+[15:55:09] [Render thread/INFO]: [Shaders] Custom uniform: fogAmount
+[15:55:09] [Render thread/INFO]: [Shaders] Relative size colortex5: 0.25 0.25
+[15:55:10] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:10] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:10] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:10] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:10] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:10] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:10] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:10] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:10] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:10] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:10] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:10] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:10] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:10] [Render thread/INFO]: [Shaders] Program loaded: world0/shadow
+[15:55:12] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:12] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:12] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:12] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:12] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:12] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:12] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:12] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_basic
+[15:55:12] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:12] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:12] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:12] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:12] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:12] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:12] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:12] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:12] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:12] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_textured
+[15:55:13] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:13] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:13] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:13] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:13] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:13] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:13] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:13] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_skybasic
+[15:55:13] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:13] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:13] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:13] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:13] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:13] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:13] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:13] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:13] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:13] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_skytextured
+[15:55:14] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:14] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:14] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:14] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:14] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:14] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:14] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:14] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_clouds
+[15:55:14] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:14] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:14] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:14] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:14] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:14] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:14] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:14] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:14] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:15] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_terrain
+[15:55:15] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:15] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:15] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:15] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:15] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:15] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:15] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:15] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:15] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:15] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:15] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:15] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:15] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:15] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_terrain_solid
+[15:55:16] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:16] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:16] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:16] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:16] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:16] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:16] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:16] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_damagedblock
+[15:55:16] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:16] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:16] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:16] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:16] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:16] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:16] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:16] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:16] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:16] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_block
+[15:55:29] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:29] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:29] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:29] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:29] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:29] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:29] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:29] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:29] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:29] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:29] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:29] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:29] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:29] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_entities
+[15:55:30] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:30] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:30] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:30] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:30] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:30] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:30] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:30] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_armor_glint
+[15:55:30] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:30] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:30] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:30] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:30] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:30] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:30] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:30] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:30] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:30] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_spidereyes
+[15:55:31] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:31] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:31] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:31] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:31] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:31] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:31] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:31] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_weather
+[15:55:31] [Render thread/INFO]: [Shaders] Program disabled: world0/deferred
+[15:55:31] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:31] [Render thread/INFO]: [Shaders] colortex0 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] colortex1 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] colortex2 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] colortex3 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] gaux1 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] colortex5 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] shadowcolor0 clear disabled
+[15:55:31] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:31] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:31] [Render thread/INFO]: [Shaders] colortex0 clear color: 0.0 0.0 0.0 1.0
+[15:55:31] [Render thread/INFO]: [Shaders] colortex1 clear color: 0.0 0.0 0.0 1.0
+[15:55:31] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:31] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:31] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:31] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:31] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:31] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:31] [Render thread/INFO]: [Shaders] Program loaded: world0/deferred1
+[15:55:32] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:32] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:32] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:32] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:32] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:32] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:32] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:32] [Render thread/INFO]: [Shaders] Program loaded: world0/gbuffers_water
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite2
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite3
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite4
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite5
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite6
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite7
+[15:55:32] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:32] [Render thread/INFO]: [Shaders] colortex0 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] colortex1 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] colortex2 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] colortex3 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] gaux1 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] colortex5 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] shadowcolor0 clear disabled
+[15:55:32] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:32] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:32] [Render thread/INFO]: [Shaders] colortex0 clear color: 0.0 0.0 0.0 1.0
+[15:55:32] [Render thread/INFO]: [Shaders] colortex1 clear color: 0.0 0.0 0.0 1.0
+[15:55:32] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:32] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:32] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:32] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:32] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:32] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:32] [Render thread/INFO]: [Shaders] Program loaded: world0/composite8
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite9
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite10
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite11
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite12
+[15:55:32] [Render thread/INFO]: [Shaders] Program disabled: world0/composite13
+[15:55:33] [Render thread/INFO]: [Shaders] Sun path rotation: -30.0
+[15:55:33] [Render thread/INFO]: [Shaders] Shadow map resolution: 512
+[15:55:33] [Render thread/INFO]: [Shaders] Shadow map distance: 96.0
+[15:55:33] [Render thread/INFO]: [Shaders] colortex0 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] colortex1 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] colortex2 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] colortex3 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] gaux1 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] colortex5 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] shadowcolor0 clear disabled
+[15:55:33] [Render thread/INFO]: [Shaders] Noise texture enabled
+[15:55:33] [Render thread/INFO]: [Shaders] Noise texture resolution: 256
+[15:55:33] [Render thread/INFO]: [Shaders] colortex0 clear color: 0.0 0.0 0.0 1.0
+[15:55:33] [Render thread/INFO]: [Shaders] colortex1 clear color: 0.0 0.0 0.0 1.0
+[15:55:33] [Render thread/INFO]: [Shaders] Shadow distance render mul: 1.0
+[15:55:33] [Render thread/INFO]: [Shaders] Hardware shadow filtering enabled.
+[15:55:33] [Render thread/INFO]: [Shaders] colortex0 format: R11F_G11F_B10F
+[15:55:33] [Render thread/INFO]: [Shaders] colortex1 format: R11F_G11F_B10F
+[15:55:33] [Render thread/INFO]: [Shaders] colortex2 format: RGBA8
+[15:55:33] [Render thread/INFO]: [Shaders] gaux1 format: R11F_G11F_B10F
+[15:55:33] [Render thread/INFO]: [Shaders] shadowcolor0 format: R8
+[15:55:33] [Render thread/INFO]: [Shaders] colortex5 format: RG16
+[15:55:33] [Render thread/INFO]: [Shaders] Program loaded: world0/final
+[15:55:33] [Render thread/INFO]: [Shaders] usedColorBuffers: 7
+[15:55:33] [Render thread/INFO]: [Shaders] usedDepthBuffers: 2
+[15:55:33] [Render thread/INFO]: [Shaders] usedShadowColorBuffers: 1
+[15:55:33] [Render thread/INFO]: [Shaders] usedShadowDepthBuffers: 1
+[15:55:33] [Render thread/INFO]: [Shaders] usedColorAttachs: 7
+[15:55:33] [Render thread/INFO]: [Shaders] usedDrawBuffers: 7
+[15:55:33] [Render thread/INFO]: [Shaders] bindImageTextures: false
+[15:55:33] [Render thread/INFO]: [Shaders] Framebuffer created: dfb
+[15:55:33] [Render thread/INFO]: [Shaders] Framebuffer created: sfb
+[15:55:33] [Render thread/INFO]: [Shaders] Reset model renderers
+[15:55:33] [Render thread/INFO]: [Shaders] Reset world renderers
+[15:55:35] [Render thread/INFO]: [Shaders] Save shaders configuration.
+[15:57:07] [Server thread/INFO]: Saving and pausing game...
+[15:57:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:57:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:57:08] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:57:32] [Render thread/INFO]: [Shaders] Loaded shaderpack: World Outline Shader r1.0.zip
+[15:57:32] [Render thread/INFO]: [OptiFine] Using legacy block aliases: flattening_ids.txt
+[15:57:33] [Render thread/INFO]: [OptiFine] Legacy block aliases: 2751
+[15:57:34] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/MC_OutlineShader5.zip'
+[15:57:34] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/outlines.zip'
+[15:57:34] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/More Vanilla Herobrine Villagers.zip'
+[15:57:34] [Render thread/INFO]: Reloading ResourceManager: Default, Fabric Mods (Cull Leaves, EntityCulling-Fabric, Fabric API, Fabric API Base, Fabric API Lookup API (v1), Fabric Biome API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Command API (v1), Fabric Commands (v0), Fabric Containers (v0), Fabric Content Registries (v0), Fabric Crash Report Info (v1), Fabric Dimensions API (v1), Fabric Entity Events (v1), Fabric Events Interaction (v0), Fabric Events Lifecycle (v0), Fabric Game Rule API (v1), Fabric Item API (v1), Fabric Item Groups (v0), Fabric Key Binding API (v1), Fabric Key Bindings (v0), Fabric Lifecycle Events (v1), Fabric Loot Tables (v1), Fabric Mining Level API (v1), Fabric Mining Levels (v0), Fabric Models (v0), Fabric Networking API (v1), Fabric Networking Block Entity (v0), Fabric Networking (v0), Fabric Object Builder API (v1), Fabric Object Builders (v0), Fabric Particles (v1), Fabric Registry Sync (v0), Fabric Renderer API (v1), Fabric Renderer - Indigo, Fabric Renderer Registries (v1), Fabric Rendering Data Attachment (v1), Fabric Rendering Fluids (v1), Fabric Rendering (v0), Fabric Rendering (v1), Fabric Resource Conditions API (v1), Fabric Resource Loader (v0), Fabric Screen API (v1), Fabric Screen Handler API (v1), Fabric Structure API (v1), Fabric Tag Extensions (v0), Fabric Textures (v0), Fabric Tool Attribute API (v1), Fabric Transfer API (v1), Fabric Loader, FFmpeg Bridge, Krypton, LazyDFU, MidnightLib, Manningham Mills, Optium, Replay Mod, ReplayModAudioRender), replaymod_lang
+[15:57:34] [Render thread/INFO]: [OptiFine] *** Reloading textures ***
+[15:57:34] [Render thread/INFO]: [OptiFine] Resource packs: Fabric Mods
+[15:57:34] [Render thread/INFO]: [Shaders] Uninit
+[15:57:34] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:57:34] [Worker-Main-4/INFO]: [OptiFine] Multitexture: false
+[15:57:34] [Worker-Main-3/INFO]: [OptiFine] Multitexture: false
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:40] [Worker-Main-2/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@4c92f9d9
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] Multipass connected textures: false
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_pane_white.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_white.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_orange.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_pane_orange.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_magenta.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_pane_magenta.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_light_blue.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_pane_light_blue.properties
+[15:57:40] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_pane_yellow.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_yellow.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_lime.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_pane_lime.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pane_pink.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pink.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_gray.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_pane_gray.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_light_gray.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_pane_light_gray.properties
+[15:57:41] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_cyan.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_pane_cyan.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_pane_purple.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_purple.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_blue.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_pane_blue.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_brown.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_pane_brown.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_green.properties
+[15:57:42] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_pane_green.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_pane_red.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_red.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_black.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_pane_black.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass_pane.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/21_tinted_glass/tinted_glass.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/30_bookshelf/bookshelf.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/40_sandstone/sandstone.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/41_red_sandstone/red_sandstone.properties
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] Multipass connected textures: false
+[15:57:43] [Worker-Main-2/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:57:45] [Sound engine/ERROR]: Stop: Invalid operation.
+[ALSOFT] (EE) Failed to set real-time priority for thread: Operation not permitted (1)
+[15:57:45] [Render thread/INFO]: OpenAL initialized.
+[15:57:45] [Render thread/INFO]: Sound engine started
+[15:57:46] [Render thread/INFO]: Created: 1024x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 1024x1024, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 1024x1024, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 45
+[15:57:46] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x128, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x128, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:46] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x512, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x512, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:46] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x512, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x512, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:46] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:46] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:46] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map normal: 512x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [Shaders] Allocate texture map specular: 512x256, mipmaps: 0
+[15:57:46] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:49] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [OptiFine] Animated sprites: 1
+[15:57:49] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map normal: 256x256, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map specular: 256x256, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:49] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map normal: 128x128, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [Shaders] Allocate texture map specular: 128x128, mipmaps: 0
+[15:57:49] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:57:49] [Render thread/INFO]: [OptiFine] *** Reloading custom textures ***
+[15:57:49] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@1025fdf4
+[15:57:49] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@e1c4d04
+[15:57:49] [Render thread/INFO]: [OptiFine] Disable Forge light pipeline
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_basic
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_textured
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_textured_lit
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_terrain
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_block
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_entities
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_hand
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_weather
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: gbuffers_water
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: composite
+[15:57:51] [Render thread/INFO]: [Shaders] Program loaded: final
+[15:57:51] [Render thread/INFO]: [Shaders] usedColorBuffers: 4
+[15:57:51] [Render thread/INFO]: [Shaders] usedDepthBuffers: 2
+[15:57:51] [Render thread/INFO]: [Shaders] usedShadowColorBuffers: 0
+[15:57:51] [Render thread/INFO]: [Shaders] usedShadowDepthBuffers: 0
+[15:57:51] [Render thread/INFO]: [Shaders] usedColorAttachs: 4
+[15:57:51] [Render thread/INFO]: [Shaders] usedDrawBuffers: 1
+[15:57:51] [Render thread/INFO]: [Shaders] bindImageTextures: false
+[15:57:51] [Render thread/INFO]: [Shaders] Framebuffer created: dfb
+[15:57:51] [Render thread/INFO]: [Shaders] Reset model renderers
+[15:57:51] [Render thread/INFO]: [Shaders] Reset world renderers
+[15:57:53] [Render thread/INFO]: [Shaders] Save shaders configuration.
+[15:58:13] [Server thread/INFO]: Saving and pausing game...
+[15:58:13] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:58:13] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:58:13] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:58:19] [Render thread/INFO]: [Shaders] No shaderpack loaded.
+[15:58:19] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/MC_OutlineShader5.zip'
+[15:58:19] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/outlines.zip'
+[15:58:19] [Render thread/WARN]: Couldn't get pack info for: net.minecraft.class_3266: 'pack.mcmeta' in ResourcePack '/storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/resourcepacks/More Vanilla Herobrine Villagers.zip'
+[15:58:19] [Render thread/INFO]: Reloading ResourceManager: Default, Fabric Mods (Cull Leaves, EntityCulling-Fabric, Fabric API, Fabric API Base, Fabric API Lookup API (v1), Fabric Biome API (v1), Fabric BlockRenderLayer Registration (v1), Fabric Command API (v1), Fabric Commands (v0), Fabric Containers (v0), Fabric Content Registries (v0), Fabric Crash Report Info (v1), Fabric Dimensions API (v1), Fabric Entity Events (v1), Fabric Events Interaction (v0), Fabric Events Lifecycle (v0), Fabric Game Rule API (v1), Fabric Item API (v1), Fabric Item Groups (v0), Fabric Key Binding API (v1), Fabric Key Bindings (v0), Fabric Lifecycle Events (v1), Fabric Loot Tables (v1), Fabric Mining Level API (v1), Fabric Mining Levels (v0), Fabric Models (v0), Fabric Networking API (v1), Fabric Networking Block Entity (v0), Fabric Networking (v0), Fabric Object Builder API (v1), Fabric Object Builders (v0), Fabric Particles (v1), Fabric Registry Sync (v0), Fabric Renderer API (v1), Fabric Renderer - Indigo, Fabric Renderer Registries (v1), Fabric Rendering Data Attachment (v1), Fabric Rendering Fluids (v1), Fabric Rendering (v0), Fabric Rendering (v1), Fabric Resource Conditions API (v1), Fabric Resource Loader (v0), Fabric Screen API (v1), Fabric Screen Handler API (v1), Fabric Structure API (v1), Fabric Tag Extensions (v0), Fabric Textures (v0), Fabric Tool Attribute API (v1), Fabric Transfer API (v1), Fabric Loader, FFmpeg Bridge, Krypton, LazyDFU, MidnightLib, Manningham Mills, Optium, Replay Mod, ReplayModAudioRender), replaymod_lang
+[15:58:19] [Render thread/INFO]: [OptiFine] *** Reloading textures ***
+[15:58:19] [Render thread/INFO]: [OptiFine] Resource packs: Fabric Mods
+[15:58:19] [Render thread/INFO]: [Shaders] Uninit
+[15:58:19] [Worker-Main-2/INFO]: [OptiFine] Multitexture: false
+[15:58:19] [Worker-Main-5/INFO]: [OptiFine] Multitexture: false
+[15:58:19] [Worker-Main-3/INFO]: [OptiFine] Multitexture: false
+[15:58:23] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:23] [Worker-Main-1/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@1ef11ab4
+[15:58:23] [Worker-Main-1/INFO]: [OptiFine] Multipass connected textures: false
+[15:58:23] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_pane_white.properties
+[15:58:23] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/00_glass_white/glass_white.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_orange.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/01_glass_orange/glass_pane_orange.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_magenta.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/02_glass_magenta/glass_pane_magenta.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_light_blue.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/03_glass_light_blue/glass_pane_light_blue.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_pane_yellow.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/04_glass_yellow/glass_yellow.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_lime.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/05_glass_lime/glass_pane_lime.properties
+[15:58:24] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pane_pink.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/06_glass_pink/glass_pink.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_gray.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/07_glass_gray/glass_pane_gray.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_light_gray.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/08_glass_light_gray/glass_pane_light_gray.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_cyan.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/09_glass_cyan/glass_pane_cyan.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_pane_purple.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/10_glass_purple/glass_purple.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_blue.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/11_glass_blue/glass_pane_blue.properties
+[15:58:25] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_brown.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/12_glass_brown/glass_pane_brown.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_green.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/13_glass_green/glass_pane_green.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_pane_red.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/14_glass_red/glass_red.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_black.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/15_glass_black/glass_pane_black.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/20_glass/glass_pane.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/21_tinted_glass/tinted_glass.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/30_bookshelf/bookshelf.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/40_sandstone/sandstone.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] ConnectedTextures: optifine/ctm/default/41_red_sandstone/red_sandstone.properties
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] Multipass connected textures: false
+[15:58:26] [Worker-Main-1/INFO]: [OptiFine] BetterGrass: Parsing default configuration optifine/bettergrass.properties
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[15:58:28] [Worker-Main-1/INFO]: [OptiFine] Multitexture: false
+[ALSOFT] (EE) Failed to set real-time priority for thread: Operation not permitted (1)
+[15:58:28] [Render thread/INFO]: OpenAL initialized.
+[15:58:28] [Render thread/INFO]: Sound engine started
+[15:58:29] [Render thread/INFO]: Created: 1024x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 45
+[15:58:29] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:29] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:29] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:29] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:29] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:29] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[15:58:29] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:31] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[15:58:31] [Render thread/INFO]: [OptiFine] Animated sprites: 1
+[15:58:31] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[15:58:31] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:31] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[15:58:31] [Render thread/INFO]: [OptiFine] Animated sprites: 0
+[15:58:31] [Render thread/INFO]: [OptiFine] *** Reloading custom textures ***
+[15:58:31] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@36432cbf
+[15:58:32] [Render thread/WARN]: [OptiFine] Unknown resource pack type: net.fabricmc.fabric.impl.resource.loader.FabricModResourcePack@23fe4230
+[15:58:32] [Render thread/INFO]: [OptiFine] Disable Forge light pipeline
+[15:58:44] [Render thread/INFO]: [Shaders] Save shaders configuration.
+[15:59:25] [Server thread/INFO]: Saving and pausing game...
+[15:59:25] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:59:25] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:59:25] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:59:26] [Server thread/INFO]: Z3MON lost connection: Disconnected
+[15:59:26] [Server thread/INFO]: Z3MON left the game
+[15:59:26] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[15:59:27] [Server thread/INFO]: Stopping server
+[15:59:27] [Server thread/INFO]: Saving players
+[15:59:27] [Server thread/INFO]: Saving worlds
+[15:59:27] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:overworld
+[15:59:27] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_nether
+[15:59:27] [Server thread/INFO]: Saving chunks for level 'ServerLevel[Redstone Hell0]'/minecraft:the_end
+[15:59:27] [Server thread/INFO]: ThreadedAnvilChunkStorage (Redstone Hell0): All chunks are saved
+[15:59:27] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[15:59:27] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[15:59:27] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[15:59:28] [Thread-36/INFO]: [STDERR]: java.nio.file.FileSystemException: /storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/.replay_cache: Invalid argument
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.updateDosAttribute(LinuxDosFileAttributeView.java:278)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setHidden(LinuxDosFileAttributeView.java:196)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setAttribute(LinuxDosFileAttributeView.java:91)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.AbstractFileSystemProvider.setAttribute(AbstractFileSystemProvider.java:81)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.nio.file.Files.setAttribute(Files.java:1919)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCacheFolder(ReplayFoldersService.java:49)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCachePathForReplay(ReplayFoldersService.java:61)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:64)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:34)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.editor.gui.MarkerProcessor.hasWork(MarkerProcessor.java:53)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.editor.gui.MarkerProcessor.apply(MarkerProcessor.java:115)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.recording.packet.PacketListener.lambda$channelInactive$6(PacketListener.java:296)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.lang.Thread.run(Thread.java:840)
+[15:59:28] [Thread-36/INFO]: [STDERR]: java.nio.file.FileSystemException: /storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/.replay_cache: Invalid argument
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.updateDosAttribute(LinuxDosFileAttributeView.java:278)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setHidden(LinuxDosFileAttributeView.java:196)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setAttribute(LinuxDosFileAttributeView.java:91)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.AbstractFileSystemProvider.setAttribute(AbstractFileSystemProvider.java:81)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.nio.file.Files.setAttribute(Files.java:1919)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCacheFolder(ReplayFoldersService.java:49)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCachePathForReplay(ReplayFoldersService.java:61)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:64)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:34)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.editor.gui.MarkerProcessor.apply(MarkerProcessor.java:139)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.recording.packet.PacketListener.lambda$channelInactive$6(PacketListener.java:296)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.lang.Thread.run(Thread.java:840)
+[15:59:28] [Thread-36/INFO]: [STDERR]: java.nio.file.FileSystemException: /storage/emulated/0/games/Pojav-Glow-Worm/.minecraft/.replay_cache: Invalid argument
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.updateDosAttribute(LinuxDosFileAttributeView.java:278)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setHidden(LinuxDosFileAttributeView.java:196)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.LinuxDosFileAttributeView.setAttribute(LinuxDosFileAttributeView.java:91)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/sun.nio.fs.AbstractFileSystemProvider.setAttribute(AbstractFileSystemProvider.java:81)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.nio.file.Files.setAttribute(Files.java:1919)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCacheFolder(ReplayFoldersService.java:49)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFoldersService.getCachePathForReplay(ReplayFoldersService.java:61)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.core.files.ReplayFilesService.open(ReplayFilesService.java:64)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.editor.gui.MarkerProcessor.apply(MarkerProcessor.java:156)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at knot//com.replaymod.recording.packet.PacketListener.lambda$channelInactive$6(PacketListener.java:296)
+[15:59:28] [Thread-36/INFO]: [STDERR]: 	at java.base/java.lang.Thread.run(Thread.java:840)
+[15:59:34] [Render thread/INFO]: Stopping!
+[15:59:34] [CullThread/INFO]: [STDOUT]: Shutting down culling task!
+EGLBridge: Terminating
