@@ -33,3 +33,21 @@ No speculative renderer rewrite, copied Sodium culler, or unsupported Entity Cul
 ## Required A/B method
 
 Compare native OptiFine and Optium with identical render distance, simulation distance, graphics, clouds, entity distance, particles, shader state, resource pack, world, camera, and recording state. Warm up the scene and compare several stable 30-second windows after the phone reaches similar temperatures. Record average FPS plus whether the FPS changes when looking at a blank wall, a dense block scene, foliage, and many entities. Repeat with the same minimal mod list to isolate Fabric API/ReplayMod overhead. Do not call an optimization successful unless it raises the stable FPS or frame pacing without regressions in startup, world loading, shaders, or ReplayMod recording/rendering.
+
+## Implemented experiment: separate renderer profiles
+
+The CI build now stages two mutually exclusive JARs from the same verified code:
+
+- **Compatibility profile** (`Optium-<version>.jar`): keeps `fabric-renderer-indigo:force_compatibility=true` and registers the existing Indigo compatibility hooks. Prefer this when mods require Fabric Renderer API / Indigo custom block models.
+- **Performance candidate** (`Optium-performance-<version>.jar`): sets `fabric-renderer-api-v1:contains_renderer=true`, removes the Indigo force-compatibility flag, adds a marker resource, and skips Optium's Indigo interception mixins. This asks Fabric Renderer API to let OptiFine own terrain rendering, consistent with other OptiFine/Fabric integrations. It is a candidate, not yet a measured FPS win.
+
+These variants must never be installed together because they share the same mod ID. The performance candidate deliberately trades away Indigo custom block-model compatibility. Standard vanilla terrain, OptiFine rendering/shaders, ReplayMod compatibility workaround, and non-renderer API integrations are still intended to work, but the exact mod list must be tested.
+
+### Acceptance criteria for the performance candidate
+
+1. It starts cleanly on the target device with Fabric Loader 0.16.14, OptiFine HD U H2 pre1, and ReplayMod 2.6.20.
+2. It enters and reloads a world without missing chunks, invisible blocks, or model errors.
+3. Shader packs load and ReplayMod can record and render with shaders.
+4. Repeated matched-temperature A/B tests show better sustained frame rate or frame pacing than the compatibility JAR. If not, do not call it a performance improvement and return to profiling.
+5. Mods relying on Indigo's custom rendering are documented as incompatible with this profile and can be recovered by switching to the compatibility JAR.
+
