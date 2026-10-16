@@ -9,7 +9,8 @@ public class OptiumLoadGuard implements PreLaunchEntrypoint {
 		// Early Risers run before pre-launch. ReplayMod registers its
 		// mixins.jgui.json config from its own Early Riser, so doing this in
 		// OptiumSetup.run() is too early and cannot see the target config.
-		if (FabricLoader.getInstance().isModLoaded("replaymod")) {
+		if (FabricLoader.getInstance().isModLoaded("replaymod")
+				&& OptiumSetup.isPresent("minecraft", ">=1.17")) {
 			OptiumSetup.disableReplayModJGuiKeyboardMixin();
 		}
 	}
