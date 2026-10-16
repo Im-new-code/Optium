@@ -501,10 +501,13 @@ public class OptiumSetup implements Runnable {
 
 		if (isPresent("replaymod")) {
 			if (isPresent("minecraft", ">=1.17")) {
-				// ReplayMod registers mixins.jgui.json in its own Early Riser, which
-				// runs after this one. Apply the workaround from OptiumLoadGuard's
-				// preLaunch entrypoint, once all Early Risers have registered configs.
-				System.out.println("[Optium] Deferring the ReplayMod jGui keyboard workaround until pre-launch.");
+				// Fabric registers mixin configs declared in mod metadata after
+				// the Early Riser phase. Register ReplayMod's jGui config now so
+				// the conflicting keyboard entry can be removed before preparation.
+				// Mixin ignores the later duplicate config registration by name.
+				System.out.println("[Optium] Pre-registering ReplayMod's jGui config for the OptiFine keyboard workaround.");
+				Mixins.addConfiguration("mixins.jgui.json");
+				disableReplayModJGuiKeyboardMixin();
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
