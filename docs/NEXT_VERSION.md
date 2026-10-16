@@ -1,32 +1,27 @@
-# Optium 0.2.0 development plan
+# Optium 0.2.0 performance and compatibility plan
 
-This branch is for the next development version. The 0.1.0-dev release remains the tested compatibility baseline.
+Optium's purpose is to bridge OptiFine into Fabric with maximum compatibility and minimal runtime overhead. There is no Optium status screen, keybind, HUD, or FPS overlay. Keep Mod Menu optional and do not add configuration screens unless a proven optimization requires a user-facing setting.
 
-## Diagnostic screen
+## Performance findings so far
 
-- Keep a compact vanilla-style Optium Status screen available through the configurable `O` keybinding in-game.
-- Do not add a title-screen button: the previous injection crashed during title-screen initialization in the OptiFine runtime.
-- Show actionable state only: bridge initialization, detected OptiFine version, renderer compatibility/bypass state, ReplayMod workaround status, Minecraft/Fabric/Java versions, loaded-mod count, and Java heap use.
-- Keep the copy-diagnostics action so users can report problems without manually transcribing log lines.
-- Do not add an FPS counter or FPS measurement UI. Minecraft's F3 display, OptiFine's FPS option, and the launcher already provide FPS visibility.
-- Keep the screen passive: no polling threads, third-party UI dependencies, forced garbage collection, or renderer modification.
-- Display “not confirmed” rather than claiming the ReplayMod workaround succeeded when the target mixin was not removed.
+- OptiFine remapping, class-cache validation, ASM class replacement setup, and transformation registration are startup/class-loading operations. They do not, by themselves, explain a sustained 30–40 FPS result after the world is loaded.
+- Sodium's performance lead is primarily architectural: it replaces parts of Minecraft's chunk/block renderer and improves visible geometry submission, chunk meshing, and visibility handling. Those hooks cannot be safely copied into OptiFine's renderer as isolated mixins without risking shaders, Fabric Rendering API behavior, and ReplayMod.
+- Some broadly used optimizations (entity culling, particle culling, block-entity rendering changes, memory deduplication, and game-tick optimizations) overlap with existing OptiFine features or target a different bottleneck. Do not add a second culling path merely because it helps under vanilla/Sodium.
+- The title-screen version text runs only on the title screen and is not an explanation for reduced FPS while in a world. The status-screen code and tick/keybinding hook have been removed rather than expanding this UI.
 
-## Performance investigation
+## Optimization process
 
-The latest log's roughly 0.7-second bridge setup time is startup work and does not prove the cause of a sustained FPS drop. Do not advertise an FPS boost until there is evidence.
-
-1. Reproduce an OptiFine vs Optium A/B test on the same device, world/scene, render settings, shader state, and recording state.
-2. Compare frame pacing and CPU/GPU behavior using existing game/launcher tools and targeted logs, not a redundant Optium FPS overlay.
-3. Separate steady-state rendering costs from startup/remapping and integrated-server tick delays.
-4. Optimize only a demonstrated hot path. Keep OptiFine rendering behavior and ReplayMod recording/rendering as regression checks.
-5. Keep default runtime overhead negligible and add diagnostic logging only when it can answer a concrete question.
+1. Profile Optium's render path and compatibility mixins on the exact Minecraft 1.17.1 + OptiFine HD U H2 pre1 profile. Compare with normal OptiFine using identical world, camera position, render distance, graphics options, shader state, resource pack, and recording state.
+2. Separate CPU-bound chunk building, CPU-bound render submission, GPU fill/shader load, integrated-server tick stalls, and thermal throttling. Use existing F3/launcher FPS displays and logs; do not add an Optium FPS overlay.
+3. For each proposed patch, identify its target hot path and the expected bottleneck. Add no-op overhead neither to the render loop nor to each game tick.
+4. Reuse external mod code only when its license permits it and the exact hook is compatible with this OptiFine target. Prefer porting a narrow, independently testable idea over copying a whole renderer subsystem.
+5. Test every candidate for startup, world loading, ReplayMod record/render, shaders, and a renderer-free control. Reject any patch that harms the baseline or produces graphical artifacts.
 
 ## Compatibility guardrails
 
-- Minecraft 1.17.1, Fabric Loader 0.16.14, and Java 17 remain the priority profile.
+- Priority target: Minecraft 1.17.1, Fabric Loader 0.16.14, Java 17, PojavLauncher/Android.
 - OptiFine remains a separate user-supplied JAR.
-- ReplayMod remains installed; only its conflicting jGui keyboard mixin is conditionally disabled by the tested workaround.
-- Sodium/Iris and the OptiFine renderer remain separate profile choices. When Sodium or Iris is detected, the OptiFine renderer integration should be bypassed.
-- Do not bundle third-party performance mods.
-- CI success verifies compilation and packaged resources, not runtime correctness on the target Android device. Test the rebuilt JAR on PojavLauncher before calling the crash fixed.
+- Keep the tested ReplayMod keyboard-mixin workaround.
+- Sodium/Iris and OptiFine remain separate renderer profiles. When Sodium or Iris is detected, Optium must bypass OptiFine class replacement and OptiFine-specific mixins.
+- Do not bundle third-party performance mods, require Mod Menu, introduce polling threads, or perform forced garbage collection.
+- CI verifies compilation and resource/JAR structure; runtime behavior and FPS must be tested on the target Android device before claiming a performance improvement.
