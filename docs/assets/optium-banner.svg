@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Optium — OptiFine bridged into Fabric</title>
+  <desc id="desc">A dark, neon-blue and violet technical banner with a pixel grid, animated signal lines, and an abstract bridge linking Fabric to OptiFine.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080d19"/>
+      <stop offset=".54" stop-color="#10142b"/>
+      <stop offset="1" stop-color="#071521"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ee7ff"/>
+      <stop offset=".5" stop-color="#8a7dff"/>
+      <stop offset="1" stop-color="#cc68ff"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14243b" stop-opacity=".98"/>
+      <stop offset="1" stop-color="#11152e" stop-opacity=".86"/>
+    </linearGradient>
+    <radialGradient id="aura">
+      <stop offset="0" stop-color="#7164ff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#7164ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#8aa8dc" stroke-opacity=".085" stroke-width="1"/>
+    </pattern>
+    <style>
+      .label{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .pulse{animation:pulse 4s ease-in-out infinite;transform-origin:1010px 170px}
+      .float1{animation:float1 7s ease-in-out infinite}
+      .float2{animation:float2 8s ease-in-out infinite}
+      .scan{animation:scan 6s linear infinite}
+      .dash{stroke-dasharray:7 13;animation:dash 12s linear infinite}
+      @keyframes pulse{0%,100%{opacity:.55;transform:scale(.96)}50%{opacity:1;transform:scale(1.04)}}
+      @keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+      @keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+      @keyframes scan{0%{transform:translateX(-250px);opacity:0}12%{opacity:.8}88%{opacity:.8}100%{transform:translateX(1250px);opacity:0}}
+      @keyframes dash{to{stroke-dashoffset:-240}}
+      @media(prefers-reduced-motion:reduce){.pulse,.float1,.float2,.scan,.dash{animation:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="26" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="26" fill="url(#grid)"/>
+  <ellipse cx="1010" cy="176" rx="310" ry="250" fill="url(#aura)"/>
+  <path d="M0 294H1200" stroke="#7b8db6" stroke-opacity=".15"/>
+  <path d="M0 315H1200" stroke="#7b8db6" stroke-opacity=".08"/>
+  <path d="M0 0H1200V4H0Z" fill="url(#accent)" opacity=".9"/>
+  <g opacity=".75">
+    <path d="M670 45H830L860 75H1000" fill="none" stroke="#6476b7" stroke-opacity=".5" stroke-width="1.5"/>
+    <path d="M720 290H860L890 260H1140" fill="none" stroke="#6476b7" stroke-opacity=".5" stroke-width="1.5"/>
+    <path d="M780 108H900L930 138H1175" fill="none" stroke="#72dfff" stroke-opacity=".3" stroke-width="1.5" class="dash"/>
+    <circle cx="830" cy="45" r="3" fill="#65dff6"/>
+    <circle cx="1140" cy="260" r="3" fill="#c37cff"/>
+  </g>
+  <g class="label" transform="translate(64 70)">
+    <rect width="56" height="56" rx="15" fill="#131d34" stroke="url(#accent)" stroke-width="1.5"/>
+    <path d="M16 15H40V41H16Z" fill="none" stroke="#70e5ff" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M21 20H35V36H21Z" fill="#8b7cff" fill-opacity=".25" stroke="#aa88ff" stroke-width="1.5"/>
+    <path d="M27 24L32 28L27 32" fill="none" stroke="#d9f9ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="76" y="33" fill="#7ceaff" font-size="13" font-weight="700" letter-spacing="3">FABRIC COMPATIBILITY BRIDGE</text>
+    <text x="0" y="139" fill="#f3f6ff" font-size="68" font-weight="850" letter-spacing="-2">OPTIUM</text>
+    <rect x="2" y="155" width="285" height="4" rx="2" fill="url(#accent)"/>
+    <text x="2" y="193" fill="#d5def4" font-size="24" font-weight="550">OptiFine, bridged into Fabric.</text>
+    <text x="3" y="224" fill="#95a7c5" font-size="15">A compatibility-focused bridge for separately supplied OptiFine.</text>
+    <g transform="translate(0 250)" font-size="12" font-weight="700">
+      <rect width="108" height="32" rx="16" fill="#14263a" stroke="#4dd5ed" stroke-opacity=".65"/>
+      <circle cx="17" cy="16" r="4" fill="#5be5f3"/><text x="29" y="20" fill="#dffaff">FABRIC</text>
+      <rect x="120" width="133" height="32" rx="16" fill="#191c3d" stroke="#8d7fff" stroke-opacity=".75"/>
+      <circle cx="137" cy="16" r="4" fill="#9a88ff"/><text x="149" y="20" fill="#ebe6ff">OPTIFINE BRIDGE</text>
+      <rect x="265" width="110" height="32" rx="16" fill="#182b2c" stroke="#58d5b8" stroke-opacity=".6"/>
+      <circle cx="282" cy="16" r="4" fill="#55e2b8"/><text x="294" y="20" fill="#dffcf3">ANDROID</text>
+    </g>
+  </g>
+  <g class="pulse">
+    <circle cx="1010" cy="170" r="146" fill="none" stroke="#6d74ff" stroke-opacity=".18" stroke-width="1"/>
+    <circle cx="1010" cy="170" r="121" fill="none" stroke="#5edff5" stroke-opacity=".32" stroke-width="1.5"/>
+    <circle cx="1010" cy="170" r="94" fill="url(#aura)" stroke="url(#accent)" stroke-width="1.5" filter="url(#glow)"/>
+  </g>
+  <g class="float1" transform="translate(900 98)">
+    <path d="M0 22L37 0L74 22L37 44Z" fill="#233958" stroke="#75e3ff" stroke-width="1.5"/>
+    <path d="M0 22V65L37 87V44Z" fill="#15263f" stroke="#75e3ff" stroke-opacity=".8" stroke-width="1.5"/>
+    <path d="M74 22V65L37 87V44Z" fill="#4d4385" stroke="#a58cff" stroke-opacity=".9" stroke-width="1.5"/>
+    <path d="M21 22L37 13L53 22L37 31Z" fill="#8a7dff" opacity=".8"/>
+  </g>
+  <g class="float2" transform="translate(1033 177)">
+    <path d="M0 18L30 0L60 18L30 36Z" fill="#1e3850" stroke="#b77eff" stroke-width="1.4"/>
+    <path d="M0 18V52L30 70V36Z" fill="#152a44" stroke="#6ce5ff" stroke-opacity=".8" stroke-width="1.4"/>
+    <path d="M60 18V52L30 70V36Z" fill="#49366d" stroke="#b77eff" stroke-opacity=".8" stroke-width="1.4"/>
+  </g>
+  <g class="float1" transform="translate(1093 86)" opacity=".9">
+    <rect width="24" height="24" rx="4" fill="#13273e" stroke="#5ee7ff"/>
+    <path d="M6 12H18M12 6V18" stroke="#83f0ff" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+  <g class="float2" transform="translate(832 232)" opacity=".9">
+    <rect width="18" height="18" rx="3" fill="#2a1d4d" stroke="#be7bff"/>
+    <path d="M5 9H13M9 5V13" stroke="#d3a1ff" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <path class="scan" d="M0 20V340" stroke="url(#accent)" stroke-width="2" stroke-opacity=".55" filter="url(#glow)"/>
+  <text class="label" x="1136" y="333" text-anchor="end" fill="#8093b5" font-size="11" letter-spacing="2">OPEN SOURCE • MPL-2.0</text>
+</svg>
