@@ -1,17 +1,13 @@
 package me.modmuss50.optium.mod;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint;
 
 public class OptiumLoadGuard implements PreLaunchEntrypoint {
 	@Override
 	public void onPreLaunch() {
-		// Early Risers run before pre-launch. ReplayMod registers its
-		// mixins.jgui.json config from its own Early Riser, so doing this in
-		// OptiumSetup.run() is too early and cannot see the target config.
-		if (FabricLoader.getInstance().isModLoaded("replaymod")
-				&& OptiumSetup.isPresent("minecraft", ">=1.17")) {
-			OptiumSetup.disableReplayModJGuiKeyboardMixin();
-		}
+		// This no-op entrypoint is retained to preserve the class-loading
+		// ordering guard used by early-riser based launchers.
+		// See ReplayMod's chain-loading rationale:
+		// https://github.com/ReplayMod/ReplayMod/commit/27edfcb4f3cd0eac0c7fb24e87ee3fa67324ab0a
 	}
 }
