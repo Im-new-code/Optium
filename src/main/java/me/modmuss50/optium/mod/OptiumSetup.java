@@ -500,10 +500,12 @@ public class OptiumSetup implements Runnable {
 		}
 
 		if (isPresent("replaymod")) {
-			if (isPresent("minecraft", ">=1.18.1")) {
-				Mixins.addConfiguration("optium.compat.replaymod.newer-mixins.json");
-			} else if (isPresent("minecraft", ">=1.17")) {
-				Mixins.addConfiguration("optium.compat.replaymod.new-mixins.json");
+			if (isPresent("minecraft", ">=1.17")) {
+				// Work on Mixin's complete config registry, not just its pending
+				// config queue: by Early Riser time, some configs may already have
+				// been visited and no longer appear in Mixins.getConfigs().
+				System.out.println("[Optium] Applying the ReplayMod jGui keyboard workaround through Mixin's config registry.");
+				disableReplayModJGuiKeyboardMixin();
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
@@ -529,6 +531,111 @@ public class OptiumSetup implements Runnable {
 				}
 			}
 		}
+	}
+
+	/**
+	 * Removes only ReplayMod's known-broken bundled jGui keyboard mixin from
+	 * the registered Mixin config. The pre-prepare lists are updated first;
+	 * already prepared internal lists are also filtered, where present, so
+	 * early class transformations cannot make the workaround ineffective.
+	 */
+	static void disableReplayModJGuiKeyboardMixin() {
+		Config targetConfig = null;
+		for (Config config : getKnownMixinConfigs()) {
+			if ("mixins.jgui.json".equals(config.getName())) {
+				targetConfig = config;
+				break;
+			}
+		}
+
+		if (targetConfig == null) {
+			System.err.println("[Optium] Mixin's full config registry does not contain mixins.jgui.json; cannot apply the ReplayMod keyboard workaround.");
+			return;
+		}
+
+		IMixinConfig settings = targetConfig.getConfig();
+		String mixinPackage = settings.getMixinPackage();
+		if (mixinPackage == null || !mixinPackage.contains("johni0702.minecraft.gui.versions.mixin")) {
+			System.err.println("[Optium] Found mixins.jgui.json, but its package did not match the expected ReplayMod jGui package. Leaving it unchanged: " + mixinPackage);
+			return;
+		}
+
+		boolean removed = false;
+		for (String fieldName : new String[] {
+				"mixinClasses", "mixinClassesClient", "mixinClassesServer",
+				"pendingMixins", "mixins", "mixinMapping"
+		}) {
+			removed |= removeReplayModMixinEntries(settings, fieldName);
+		}
+
+		if (removed) {
+			System.out.println("[Optium] Disabled ReplayMod's jGui MixinKeyboardListener (only) to bypass the OptiFine charTypedOptifine conflict.");
+		} else {
+			System.err.println("[Optium] Found mixins.jgui.json in Mixin's full registry, but did not find its keyboard mixin entry; no mixin entries were changed.");
+		}
+	}
+
+	private static java.util.Set<Config> getKnownMixinConfigs() {
+		java.util.Set<Config> configs = new java.util.LinkedHashSet<>(Mixins.getConfigs());
+		try {
+			// Config.allConfigs retains registered configs even after they leave
+			// Mixin's pending/unvisited queue. The public Mixins.getConfigs()
+			// view can therefore be insufficient during Early Riser execution.
+			java.lang.reflect.Field field = Config.class.getDeclaredField("allConfigs");
+			field.setAccessible(true);
+			Object value = field.get(null);
+			if (value instanceof java.util.Map<?, ?>) {
+				for (Object entry : ((java.util.Map<?, ?>) value).values()) {
+					if (entry instanceof Config) {
+						configs.add((Config) entry);
+					}
+				}
+			}
+		} catch (ReflectiveOperationException | RuntimeException e) {
+			System.err.println("[Optium] Could not inspect Mixin's full config registry; falling back to pending configs only.");
+			e.printStackTrace();
+		}
+		return configs;
+	}
+
+	private static boolean removeReplayModMixinEntries(IMixinConfig settings, String fieldName) {
+		try {
+			java.lang.reflect.Field field = settings.getClass().getDeclaredField(fieldName);
+			field.setAccessible(true);
+			Object value = field.get(settings);
+			if (value instanceof java.util.List<?>) {
+				java.util.List<?> entries = (java.util.List<?>) value;
+				if (fieldName.startsWith("mixinClasses")) {
+					return entries.removeIf("MixinKeyboardListener"::equals);
+				}
+				return entries.removeIf(OptiumSetup::isReplayModJGuiKeyboardMixin);
+			}
+			if (value instanceof java.util.Map<?, ?>) {
+				boolean removed = false;
+				for (Object targetMixins : ((java.util.Map<?, ?>) value).values()) {
+					if (targetMixins instanceof java.util.List<?>) {
+						removed |= ((java.util.List<?>) targetMixins).removeIf(OptiumSetup::isReplayModJGuiKeyboardMixin);
+					}
+				}
+				return removed;
+			}
+		} catch (NoSuchFieldException ignored) {
+			// Mixin versions differ; a missing internal collection is safe to skip.
+		} catch (ReflectiveOperationException | RuntimeException e) {
+			System.err.println("[Optium] Could not adjust ReplayMod's jGui mixin list; the workaround may not apply.");
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	private static boolean isReplayModJGuiKeyboardMixin(Object candidate) {
+		if (candidate instanceof org.spongepowered.asm.mixin.extensibility.IMixinInfo) {
+			String className = ((org.spongepowered.asm.mixin.extensibility.IMixinInfo) candidate).getClassName();
+			return className != null
+					&& className.contains("johni0702.minecraft.gui.versions.mixin")
+					&& className.endsWith(".MixinKeyboardListener");
+		}
+		return false;
 	}
 
 	private static boolean isPresent(String modID) {
