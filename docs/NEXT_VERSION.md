@@ -27,3 +27,6 @@ Next performance work should be split into measurable tracks:
 - ReplayMod remains installed; only its conflicting jGui keyboard mixin is conditionally disabled by the tested workaround.
 - Sodium/Iris and the OptiFine renderer remain separate profile choices.
 - Do not bundle third-party performance mods.
+
+
+The 0.2.0 status screen now uses Minecraft 1.17.1's `onClose()` and `isPauseScreen()` lifecycle methods; CI is used to verify the implementation before runtime testing.
