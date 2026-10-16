@@ -39,7 +39,7 @@ public final class OptiumStatusScreen extends Screen {
                     }
                 }));
         this.addButton(new ButtonWidget(this.width / 2 + 4, buttonY, 120, 20,
-                new LiteralText("Back"), button -> close()));
+                new LiteralText("Back"), button -> onClose()));
     }
 
     @Override
