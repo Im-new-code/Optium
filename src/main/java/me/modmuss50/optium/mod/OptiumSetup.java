@@ -500,10 +500,14 @@ public class OptiumSetup implements Runnable {
 		}
 
 		if (isPresent("replaymod")) {
-			if (isPresent("minecraft", ">=1.18.1")) {
-				Mixins.addConfiguration("optium.compat.replaymod.newer-mixins.json");
-			} else if (isPresent("minecraft", ">=1.17")) {
-				Mixins.addConfiguration("optium.compat.replaymod.new-mixins.json");
+			if (isPresent("minecraft", ">=1.17")) {
+				// Work around the OptiFine/ReplayMod keyboard mixin conflict:
+				// ReplayMod's MixinKeyboardListener can fail against OptiFine's
+				// charTypedOptifine method due to a static-modifier mismatch.
+				// Each 1.17+ compatibility config only registers the keyboard
+				// adapter, so skipping the config avoids that adapter without
+				// disabling ReplayMod itself or weakening Mixin injection checks.
+				System.out.println("[Optium] Skipping the ReplayMod keyboard compatibility adapter on Minecraft 1.17+ to avoid the OptiFine charTypedOptifine static-modifier conflict. ReplayMod itself remains enabled.");
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
