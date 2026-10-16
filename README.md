@@ -27,7 +27,7 @@ A historical 1.17.1 report described a world-loading freeze with Loader 0.12.5 a
 
 ## Build and verification
 
-The GitHub Actions workflow checks JSON/resource consistency and builds the mod with Java 17. Each successful workflow uploads the built JAR as an artifact. Download the artifact from the workflow run; use the ordinary optium JAR, not a sources JAR, in the Minecraft 1.17.1 profile.
+The GitHub Actions workflow checks metadata/resource consistency, builds with Java 17, then validates the remapped JAR's ZIP integrity, embedded Fabric-ASM dependency, entrypoint classes, logo bytes, and Java 8 class-file compatibility. A successful run uploads one distributable named `Optium-<version>.jar` in the `optium-mod-jar` artifact, avoiding source and development JAR variants. Download it from the workflow run's **Artifacts** section. These checks confirm packaging and bytecode structure, not that Minecraft has launched successfully.
 
 On a phone, test using a backup profile first. Keep Optium, OptiFine, and Fabric API versions aligned with Minecraft 1.17.1. Do not load Optium and OptiFabric together. OptiFine is not compatible with Sodium, so keep this in a separate profile from the Sodium/Iris setup.
 
