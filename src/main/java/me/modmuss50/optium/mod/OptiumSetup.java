@@ -59,6 +59,7 @@ public class OptiumSetup implements Runnable {
 
 		System.out.println("[Optium] No Sodium/Iris renderer detected; enabling the OptiFine bridge.");
 		OptifineInjector injector;
+		long bridgeStarted = System.nanoTime();
 		try {
 			Pair<File, ClassCache> runtime = OptifineSetup.getRuntime();
 			optifineRuntimeJar = runtime.getLeft();
@@ -67,7 +68,10 @@ public class OptiumSetup implements Runnable {
 			ClassTinkerers.addURL(runtime.getLeft().toURI().toURL());
 
 			injector = new OptifineInjector(runtime.getRight());
+			long injectorStarted = System.nanoTime();
 			injector.setup();
+			System.out.println("[Optium] OptiFine class replacement registration took " + ((System.nanoTime() - injectorStarted) / 1_000_000L) + " ms");
+			System.out.println("[Optium] Total early bridge setup took " + ((System.nanoTime() - bridgeStarted) / 1_000_000L) + " ms");
 		} catch (Throwable e) {
 			if (!OptiumError.hasError()) {
 				OptifineVersion.jarType = JarType.INTERNAL_ERROR;
