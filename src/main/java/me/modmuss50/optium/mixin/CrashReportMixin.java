@@ -33,6 +33,9 @@ abstract class CrashReportMixin {
 			.add("OptiFine jar designed for", OptifineVersion.minecraftVersion)
 			.add("OptiFine jar version", OptifineVersion.version)
 			.add("OptiFine jar status", () -> {
+				if (OptiumSetup.disabledForExternalRenderer) {
+					return "OptiFine bridge intentionally bypassed because Sodium/Iris owns rendering";
+				}
 				if (OptifineVersion.jarType != null) {
 					switch (OptifineVersion.jarType) {
 					case MISSING:
