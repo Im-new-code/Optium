@@ -21,6 +21,7 @@ import net.minecraft.world.BlockRenderView;
 
 import me.modmuss50.optium.compat.InterceptingMixin;
 import me.modmuss50.optium.compat.Shim;
+import me.modmuss50.optium.performance.PerformanceDiagnostics;
 
 @Mixin(BlockModelRenderer.class)
 @InterceptingMixin("net/fabricmc/fabric/mixin/client/indigo/renderer/MixinBlockModelRenderer")
@@ -29,7 +30,17 @@ abstract class BlockModelRendererMixin {
 			method = {"renderModel", "tesselateBlock"}, remap = false,
 			cancellable = true)
 	private void hookRender(BlockRenderView blockView, BakedModel model, BlockState state, BlockPos pos, MatrixStack matrix, VertexConsumer buffer, boolean checkSides, Random rand, long seed, int overlay, @Coerce Object modelData, CallbackInfoReturnable<Boolean> call) {
-		hookRender(blockView, model, state, pos, matrix, buffer, checkSides, rand, seed, overlay, call);
+		if (!PerformanceDiagnostics.isIndigoProfilingEnabled()) {
+			hookRender(blockView, model, state, pos, matrix, buffer, checkSides, rand, seed, overlay, call);
+			return;
+		}
+
+		long started = System.nanoTime();
+		try {
+			hookRender(blockView, model, state, pos, matrix, buffer, checkSides, rand, seed, overlay, call);
+		} finally {
+			PerformanceDiagnostics.recordIndigoCallback(System.nanoTime() - started);
+		}
 	}
 
 	@Shim
