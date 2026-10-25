@@ -1,0 +1,38 @@
+name: Build OptiLithium companion
+on:
+  pull_request:
+    paths:
+      - "scripts/create_optilithium_variant_v2.py"
+      - "scripts/verify_optilithium_variant.py"
+      - ".github/workflows/optilithium-companion.yml"
+      - "docs/OPTILITHIUM_1.17.1.md"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download official Lithium 0.7.5 for Minecraft 1.17.1
+        run: |
+          mkdir -p build/upstream build/distributions
+          curl --fail --location --retry 3 --retry-delay 2 \
+            "https://cdn.modrinth.com/data/gvQqBUqZ/versions/mc1.17.1-0.7.5/lithium-fabric-mc1.17.1-0.7.5.jar?mr_download_reason=standalone" \
+            --output build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar
+      - name: Create OptiLithium companion
+        run: |
+          python3 scripts/create_optilithium_variant_v2.py \
+            --input build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar \
+            --output "build/distributions/OptiLithium-0.7.5-optium.1+mc1.17.1.jar"
+          python3 scripts/verify_optilithium_variant.py \
+            --input build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar \
+            --patched "build/distributions/OptiLithium-0.7.5-optium.1+mc1.17.1.jar"
+      - name: Upload OptiLithium artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: optilithium-1.17.1
+          path: build/distributions/OptiLithium-*.jar
+          if-no-files-found: error
+          retention-days: 14
