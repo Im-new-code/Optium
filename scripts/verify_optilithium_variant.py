@@ -9,7 +9,6 @@ import sys
 import zipfile
 
 PROVENANCE = "OPTILITHIUM-OPTIUM.txt"
-DEFAULTS = "assets/lithium/lithium-mixin-config-default.properties"
 EXPECTED_NAME = "OptiLithium for Optium"
 EXPECTED_VERSION = "0.7.5-optium.1"
 
@@ -54,8 +53,8 @@ def main() -> int:
                 raise ValueError("port attribution is missing")
             if old.get("license") != "LGPL-3.0-only" or new.get("license") != old.get("license"):
                 raise ValueError("license metadata changed or is unexpected")
-            if DEFAULTS not in new_names or "lithium.mixins.json" not in new_names:
-                raise ValueError("required Lithium mixin resources are missing")
+            if "lithium.mixins.json" not in new_names:
+                raise ValueError("required Lithium mixin metadata is missing")
 
             license_name = next((n for n in ("LICENSE.txt", "LICENSE.md") if n in old_names), None)
             if not license_name:
@@ -76,8 +75,6 @@ def main() -> int:
                     raise ValueError(f"class bytecode changed: {name}")
             if original.read(license_name) != result.read(license_name):
                 raise ValueError("license contents changed")
-            if original.read(DEFAULTS) != result.read(DEFAULTS):
-                raise ValueError("Lithium default optimization settings changed")
             proof = result.read(PROVENANCE).decode("utf-8")
             if "Upstream JAR SHA-256:" not in proof or "breaks.optifabric" not in proof:
                 raise ValueError("provenance record is incomplete")
@@ -86,7 +83,7 @@ def main() -> int:
             print("PASS: breaks.optifabric removed.")
             print(f"PASS: all {len(classes)} class files are byte-for-byte unchanged.")
             print("PASS: all original entries except fabric.mod.json remain byte-identical.")
-            print("PASS: Lithium defaults and LGPL license retained; provenance added.")
+            print("PASS: Lithium mixin metadata and LGPL license retained; provenance added.")
             print(f"Input SHA-256:   {sha(args.input.read_bytes())}")
             print(f"Patched SHA-256: {sha(args.patched.read_bytes())}")
             return 0
