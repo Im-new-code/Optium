@@ -13,12 +13,12 @@ Official release details: https://modrinth.com/mod/lithium/version/FHFKMKeu
 
 The packaging script makes only metadata changes:
 
-- Keeps mod ID lithium, Minecraft/Fabric Loader requirements, mixin lists, access widener, all Lithium classes, all mixin-default settings, and the LGPL-3.0-only license.
+- Keeps mod ID lithium, Minecraft/Fabric Loader requirements, mixin lists, access widener, all Lithium classes, mixin resources, access widener, compiled-in defaults, and the LGPL-3.0-only license.
 - Removes only breaks.optifabric, because Optium replaces the OptiFabric bridge in the target setup.
 - Renames the displayed mod to OptiLithium for Optium, gives the repackaged build its own 0.7.5-optium.1 version string, attributes the compatibility port, and points source/issues links to this repository.
 - Adds OPTILITHIUM-OPTIUM.txt containing the upstream version/source and SHA-256 provenance.
 
-No Lithium class file or mixin group is disabled in this first port. That follows the changes visible in the supplied OptiLithium JAR rather than guessing at extra patches. It remains experimental because compatibility with OptiFine's actual transformed classes can only be established by runtime testing.
+No Lithium class file or mixin group is disabled in this first port. Lithium 0.7.5 does not ship the assets/lithium/lithium-mixin-config-default.properties file found in later releases, so the packager does not invent one or apply newer-version setting names. This follows the changes visible in the supplied OptiLithium JAR rather than guessing at extra patches. It remains experimental because compatibility with OptiFine's actual transformed classes can only be established by runtime testing.
 
 ## Build and verification
 
@@ -27,7 +27,7 @@ GitHub Actions downloads the official Lithium 0.7.5 artifact, creates the repack
 - removed breaks.optifabric and preserved loader/game dependencies;
 - byte-for-byte equality for every original .class file;
 - every original ZIP entry except fabric.mod.json remains unchanged;
-- retained license and Lithium optimization defaults;
+- retained license and unchanged mixin / optimization resources;
 - provenance file is the only added entry.
 
 ## Install / test notes
