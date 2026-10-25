@@ -13,7 +13,6 @@ UPSTREAM_SOURCE = "https://github.com/CaffeineMC/lithium/tree/mc1.17.1-0.7.5"
 PROVENANCE = "OPTILITHIUM-OPTIUM.txt"
 OUTPUT_NAME = "OptiLithium for Optium"
 OUTPUT_VERSION = "0.7.5-optium.1"
-DEFAULTS = "assets/lithium/lithium-mixin-config-default.properties"
 
 def sha256_file(path: Path) -> str:
     h = hashlib.sha256()
@@ -60,9 +59,8 @@ def main() -> int:
             breaks = manifest.get("breaks", {})
             if breaks != {"optifabric": "*"}:
                 raise ValueError(f"unexpected breaks metadata; refusing unknown source variant: {breaks!r}")
-            for required in ("lithium.mixins.json", DEFAULTS):
-                if required not in names:
-                    raise ValueError(f"upstream JAR is missing {required}")
+            if "lithium.mixins.json" not in names:
+                raise ValueError("upstream JAR is missing lithium.mixins.json")
             license_name = next((n for n in ("LICENSE.txt", "LICENSE.md") if n in names), None)
             if not license_name:
                 raise ValueError("upstream JAR has no LICENSE.txt or LICENSE.md")
