@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Adapted from ReplayMod's OptiFine first-person hand workaround.
+// See src/main/resources/META-INF/licenses/ReplayMod-GPL-3.0.txt and THIRD_PARTY_NOTICES.md.
 package me.modmuss50.optium.compat.replaymod.mixin;
 
 import net.minecraft.client.MinecraftClient;
