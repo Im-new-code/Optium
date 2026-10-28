@@ -22,3 +22,7 @@ https://github.com/ReplayMod/ReplayMod/blob/stable/src/main/java/com/replaymod/r
 - The behavior is limited to ReplayMod's `CameraEntity`; normal player gameplay is untouched.
 - Existing keyboard workaround and renderer-performance profile are unchanged.
 - CI checks compilation and mixin metadata but cannot verify visual hand rendering. Confirm on Minecraft 1.17.1, OptiFine HD U H2 pre1, ReplayMod 2.6.20 and MobileGlues; test both free camera and spectating a recorded entity, along with shaders enabled/disabled. If the hook is not present or the hand remains invisible, capture `latest.log` from the affected session so the injection and target can be confirmed.
+
+## Third-party licensing
+
+The compatibility mixin adapts ReplayMod's OptiFine hand-rendering workaround and is marked `GPL-3.0-or-later`. The full license text is packaged at `src/main/resources/META-INF/licenses/ReplayMod-GPL-3.0.txt`; see `THIRD_PARTY_NOTICES.md` for attribution.
