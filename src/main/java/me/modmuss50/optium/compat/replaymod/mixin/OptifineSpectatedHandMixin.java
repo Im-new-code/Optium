@@ -8,9 +8,6 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.world.GameMode;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -18,21 +15,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * OptiFine's shader renderer checks the active game mode while handling its
- * first-person hand pass. ReplayMod's camera entity can be treated as a
- * spectator during that check even when the replay is spectating an entity
- * whose hand should be visible. Temporarily synchronize the local interaction
- * manager's mode with the camera's hand-rendering state, then restore replay
- * spectator mode after the pass.
- *
- * This mixin is soft-targeted because the target class only exists when the
- * separately supplied OptiFine runtime is active.
+ * OptiFine-specific replay hand compatibility. Some OptiFine paths may not
+ * reach this callback; GameRendererReplayHandWindowMixin provides the scoped
+ * renderer-level fallback for those paths.
  */
 @Pseudo
 @Mixin(targets = "net.optifine.shaders.Shaders", remap = false)
 abstract class OptifineSpectatedHandMixin {
     private static final String REPLAY_CAMERA_CLASS = "com.replaymod.replay.camera.CameraEntity";
-    private static final Set<String> optium$diagnosticStates = new HashSet<>();
 
     @Inject(
             method = "setRenderingFirstPersonHand",
@@ -45,18 +35,7 @@ abstract class OptifineSpectatedHandMixin {
         ClientPlayerEntity camera = client.player;
         ClientPlayerInteractionManager interactionManager = client.interactionManager;
 
-        String cameraClass = camera == null ? "null" : camera.getClass().getName();
-        boolean replayCamera = camera != null && isReplayCamera(camera);
-        boolean cameraSpectator = camera != null && camera.isSpectator();
-        String diagnosticState = cameraClass + "|" + renderingHand + "|" + cameraSpectator + "|" + replayCamera;
-        if (optium$diagnosticStates.add(diagnosticState)) {
-            System.out.println("[Optium-HandFix-DIAG] OptiFine hand callback reached: renderingHand="
-                    + renderingHand + ", camera=" + cameraClass + ", replayCamera=" + replayCamera
-                    + ", cameraSpectator=" + cameraSpectator
-                    + ", interactionManagerPresent=" + (interactionManager != null));
-        }
-
-        if (camera == null || interactionManager == null || !replayCamera) {
+        if (camera == null || interactionManager == null || !optium$isReplayCamera(camera)) {
             return;
         }
 
@@ -65,13 +44,11 @@ abstract class OptifineSpectatedHandMixin {
             return;
         }
 
-        // ReplayMod's camera reports non-spectator while attached to a
-        // recorded entity, but spectator while using the free camera.
-        GameMode renderMode = camera.isSpectator() ? GameMode.SPECTATOR : GameMode.SURVIVAL;
-        interactionManager.setGameMode(renderMode);
+        // The caller only checks whether the mode equals SPECTATOR.
+        interactionManager.setGameMode(camera.isSpectator() ? GameMode.SPECTATOR : GameMode.SURVIVAL);
     }
 
-    private static boolean isReplayCamera(ClientPlayerEntity player) {
+    private static boolean optium$isReplayCamera(ClientPlayerEntity player) {
         for (Class<?> type = player.getClass(); type != null; type = type.getSuperclass()) {
             if (REPLAY_CAMERA_CLASS.equals(type.getName())) {
                 return true;
