@@ -1,9 +1,6 @@
 // SPDX-License-Identifier: MPL-2.0
 package me.modmuss50.optium.compat.replaymod.mixin;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
@@ -18,13 +15,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Fallback for OptiFine runtimes where Shaders.setRenderingFirstPersonHand
- * is not reached by ReplayMod's first-person hand path.
+ * Keeps OptiFine's first-person hand render from being suppressed when
+ * ReplayMod is spectating a recorded player.
  *
- * The interaction manager's game mode is temporarily changed only while a
- * ReplayMod CameraEntity is rendering its hand pass. A depth counter keeps
- * the mode stable through nested/overloaded renderHand calls. The original
- * mode is restored at the outermost return.
+ * Some OptiFine shader paths do not reach Shaders.setRenderingFirstPersonHand,
+ * so this fallback temporarily adjusts the game-mode value around
+ * GameRenderer.renderHand. It is limited to ReplayMod's CameraEntity and
+ * restores the exact prior game mode when the outermost render call returns.
  */
 @Pseudo
 @Mixin(targets = "net.minecraft.client.render.GameRenderer")
@@ -43,12 +40,9 @@ abstract class GameRendererReplayHandWindowMixin {
     @Unique
     private static boolean optium$changedGameMode;
 
-    @Unique
-    private static final Set<String> optium$loggedStates = new HashSet<>();
-
     @Inject(method = "renderHand", at = @At("HEAD"), require = 0)
     private void optium$beginReplayHandWindow(CallbackInfo ci) {
-        // Nested overloads/calls must keep the outer window's temporary mode.
+        // Preserve the outer window across nested/overloaded renderHand calls.
         if (optium$handRenderDepth > 0) {
             optium$handRenderDepth++;
             return;
@@ -66,21 +60,13 @@ abstract class GameRendererReplayHandWindowMixin {
         optium$previousGameMode = interactionManager.getCurrentGameMode();
 
         // ReplayMod's camera is non-spectator while attached to a recorded
-        // entity. OptiFine may suppress the hand when the interaction manager
-        // still reports spectator mode, so only change that exact case.
+        // entity. OptiFine can suppress the hand if its interaction manager
+        // still reports spectator mode, so change only that specific case.
         optium$changedGameMode = !camera.isSpectator()
                 && optium$previousGameMode == GameMode.SPECTATOR;
 
         if (optium$changedGameMode) {
             interactionManager.setGameMode(GameMode.SURVIVAL);
-        }
-
-        String state = camera.isSpectator() + "|" + optium$previousGameMode + "|" + optium$changedGameMode;
-        if (optium$loggedStates.add(state)) {
-            System.out.println("[Optium-HandFix-DIAG] GameRenderer hand window: camera="
-                    + camera.getClass().getName() + ", cameraSpectator=" + camera.isSpectator()
-                    + ", previousMode=" + optium$previousGameMode
-                    + ", temporarilyChanged=" + optium$changedGameMode);
         }
     }
 
@@ -99,8 +85,7 @@ abstract class GameRendererReplayHandWindowMixin {
         GameMode previousGameMode = optium$previousGameMode;
         boolean changedGameMode = optium$changedGameMode;
 
-        // Clear the window state before restoring, so an unexpected callback
-        // cannot cause a second restoration.
+        // Clear state before restoring to prevent duplicate restoration.
         optium$handRenderInteractionManager = null;
         optium$previousGameMode = null;
         optium$changedGameMode = false;
