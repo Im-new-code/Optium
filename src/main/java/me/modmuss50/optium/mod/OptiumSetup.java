@@ -514,6 +514,7 @@ public class OptiumSetup implements Runnable {
 			// spectator mode. Soft-target OptiFine's hand-pass callback; it is
 			// a no-op when that OptiFine hook is absent.
 			if (isPresent("minecraft", ">=1.16.5")) {
+				System.out.println("[Optium-HandFix-DIAG] Registering optional OptiFine first-person hand compatibility mixin.");
 				Mixins.addConfiguration("optium.compat.replaymod.optifine-hand.mixins.json");
 			}
 
