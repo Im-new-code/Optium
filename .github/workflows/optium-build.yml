@@ -22,32 +22,16 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
       - name: Verify metadata and mixin resources
         run: python3 scripts/verify_resources.py
-      - name: Download official Lithium 0.7.5 for Minecraft 1.17.1
-        run: |
-          mkdir -p build/upstream
-          curl --fail --location --retry 3 --retry-delay 2 \
-            "https://cdn.modrinth.com/data/gvQqBUqZ/versions/mc1.17.1-0.7.5/lithium-fabric-mc1.17.1-0.7.5.jar?mr_download_reason=standalone" \
-            --output build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar
-      - name: Repackage OptiLithium companion
-        run: |
-          python3 scripts/create_optilithium_variant.py \
-            --input build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar \
-            --output "build/distributions/OptiLithium-0.7.5-optium.1+mc1.17.1.jar"
-          python3 scripts/verify_optilithium_variant.py \
-            --input build/upstream/lithium-fabric-mc1.17.1-0.7.5.jar \
-            --patched "build/distributions/OptiLithium-0.7.5-optium.1+mc1.17.1.jar"
       - name: Build mod JAR
         run: ./gradlew --no-daemon --stacktrace build
       - name: Verify packaged distribution JAR
         run: python3 scripts/verify_jar.py
       - name: Build and verify separate performance candidate
         run: python3 scripts/create_performance_variant.py
-      - name: Upload compatibility, performance, and OptiLithium JARs
+      - name: Upload compatibility and performance candidate JARs
         uses: actions/upload-artifact@v4
         with:
           name: optium-mod-jars
-          path: |
-            build/distributions/Optium-*.jar
-            build/distributions/OptiLithium-*.jar
+          path: build/distributions/Optium-*.jar
           if-no-files-found: error
           retention-days: 14
