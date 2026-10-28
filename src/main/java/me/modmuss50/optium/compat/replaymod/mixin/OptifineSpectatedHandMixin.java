@@ -8,6 +8,9 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
 import net.minecraft.world.GameMode;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,6 +32,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(targets = "net.optifine.shaders.Shaders", remap = false)
 abstract class OptifineSpectatedHandMixin {
     private static final String REPLAY_CAMERA_CLASS = "com.replaymod.replay.camera.CameraEntity";
+    private static final Set<String> optium$diagnosticStates = new HashSet<>();
 
     @Inject(
             method = "setRenderingFirstPersonHand",
@@ -41,7 +45,18 @@ abstract class OptifineSpectatedHandMixin {
         ClientPlayerEntity camera = client.player;
         ClientPlayerInteractionManager interactionManager = client.interactionManager;
 
-        if (camera == null || interactionManager == null || !isReplayCamera(camera)) {
+        String cameraClass = camera == null ? "null" : camera.getClass().getName();
+        boolean replayCamera = camera != null && isReplayCamera(camera);
+        boolean cameraSpectator = camera != null && camera.isSpectator();
+        String diagnosticState = cameraClass + "|" + renderingHand + "|" + cameraSpectator + "|" + replayCamera;
+        if (optium$diagnosticStates.add(diagnosticState)) {
+            System.out.println("[Optium-HandFix-DIAG] OptiFine hand callback reached: renderingHand="
+                    + renderingHand + ", camera=" + cameraClass + ", replayCamera=" + replayCamera
+                    + ", cameraSpectator=" + cameraSpectator
+                    + ", interactionManagerPresent=" + (interactionManager != null));
+        }
+
+        if (camera == null || interactionManager == null || !replayCamera) {
             return;
         }
 
