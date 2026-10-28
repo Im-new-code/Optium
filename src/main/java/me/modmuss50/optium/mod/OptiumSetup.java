@@ -509,6 +509,14 @@ public class OptiumSetup implements Runnable {
 		}
 
 		if (isPresent("replaymod")) {
+			// OptiFine's shader hand pass can incorrectly suppress ReplayMod's
+			// spectated first-person hand by observing the replay camera's
+			// spectator mode. Soft-target OptiFine's hand-pass callback; it is
+			// a no-op when that OptiFine hook is absent.
+			if (isPresent("minecraft", ">=1.16.5")) {
+				Mixins.addConfiguration("optium.compat.replaymod.optifine-hand.mixins.json");
+			}
+
 			if (isPresent("minecraft", ">=1.17")) {
 				// Work on Mixin's complete config registry, not just its pending
 				// config queue: by Early Riser time, some configs may already have
