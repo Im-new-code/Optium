@@ -515,6 +515,11 @@ public class OptiumSetup implements Runnable {
 				// been visited and no longer appear in Mixins.getConfigs().
 				System.out.println("[Optium] Applying the ReplayMod jGui keyboard workaround through Mixin's config registry.");
 				disableReplayModJGuiKeyboardMixin();
+
+				// OptiFine's Shaders.renderHand path suppresses hands for the
+				// replay camera because it remains in spectator mode. Temporarily
+				// mirror ReplayMod's spectated-player game mode during that path.
+				Mixins.addConfiguration("optium.compat.replaymod.optifine-mixins.json");
 			} else {
 				Mixins.addConfiguration("optium.compat.replaymod.mixins.json");
 			}
