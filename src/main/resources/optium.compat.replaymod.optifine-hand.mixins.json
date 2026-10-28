@@ -1,0 +1,9 @@
+{
+  "parent": "optium.mixins.json",
+  "package": "me.modmuss50.optium.compat.replaymod.mixin",
+  "mixins": [
+    "OptifineSpectatedHandMixin"
+  ],
+  "refmap": "optium-refmap.json",
+  "minVersion": "0.10.6+mixin.0.8-SNAPSHOT"
+}
