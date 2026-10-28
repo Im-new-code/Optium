@@ -4,7 +4,6 @@
   "package": "me.modmuss50.optium.compat.replaymod.mixin",
   "mixins": [
     "OptifineSpectatedHandMixin",
-    "GameRendererHandPathDiagnosticMixin",
     "GameRendererReplayHandWindowMixin"
   ],
   "refmap": "optium-refmap.json",
